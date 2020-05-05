@@ -26,5 +26,5 @@ mydb = mysql.connector.connect(
 
 cursor = mydb.cursor()
 
-cursor.execute('CREATE TABLE `moneymachine`.`data` ( `id` INT NOT NULL AUTO_INCREMENT , `timestamp` DATE NOT NULL , {} PRIMARY KEY (`id`)) ENGINE = InnoDB;'.format(columns))
+cursor.execute('CREATE TABLE `moneymachine`.`data` ( `id` INT NOT NULL AUTO_INCREMENT , `timestamp` DATETIME NOT NULL , {} PRIMARY KEY (`id`)) ENGINE = InnoDB;'.format(columns))
 mydb.commit()
