@@ -2,21 +2,23 @@ from kivy.app import App
 
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.button import Button
+from kivy.uix.dropdown import DropDown
 from kivy.core.window import Window
 
 Window.minimum_width = 960
 Window.minimum_height = 540
 class mainFrame(FloatLayout):
     def __init__ (self, **kwargs):
+
         super(mainFrame, self).__init__(**kwargs)
         
         self.closePopup(1)
         self.closePopup(2)
         self.closePopup(3)
         
-        #self.openPopup(1)
-        self.openPopup(2)
-        #self.openPopup(3)
+        # self.openPopup(1)
+        # self.openPopup(2)
+        self.openPopup(3)
 
     def updateGraph(self):
         if(self.ids.toggle_time_tag.state == 'down'):

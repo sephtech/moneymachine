@@ -91,18 +91,13 @@
             pos_hint: {'center_x':0.5,'center_y':0.5}
             size_hint: (None, 0.5)
             size: self.height, self.height
-            Button
-                x: 100
-                pos_hint: {'center_x':0.9,'center_y':0.9}
-                size_hint: (0.1, 0.1)
-                on_release: root.closePopup(1)
             BoxLayout
                 size_hint: (1,1)
                 pos: self.parent.pos
                 orientation: 'vertical'
                 canvas:
                     Color:
-                        rgba: 1, 1, 1, 0.5
+                        rgba: 1, 1, 1, 1
                     Rectangle:
                         pos: self.pos
                         size: self.size
@@ -120,7 +115,7 @@
                     Label
                         canvas:
                             Color:
-                                rgba: 1, 1, 1, 0.5
+                                rgba: 0, 1, 1, 1
                             Rectangle:
                                 pos: self.pos
                                 size: self.size
@@ -129,7 +124,7 @@
                     Label
                         canvas:
                             Color:
-                                rgba: 0, 1, 1, 0.5
+                                rgba: 0, 1, 1, 1
                             Rectangle:
                                 pos: self.pos
                                 size: self.size
@@ -159,29 +154,24 @@
                     
                     ProgressBar
                         id: progress_update
+            Button
+                x: 100
+                pos_hint: {'center_x':0.9,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.closePopup(1)
 
         FloatLayout
             id: popup_two
             pos_hint: {'center_x':0.5,'center_y':0.5}
             size_hint: (None, 0.5)
             size: self.height, self.height
-            Button
-                x: 100
-                pos_hint: {'center_x':0.9,'center_y':0.9}
-                size_hint: (0.1, 0.1)
-                on_release: root.closePopup(2)
-            Button
-                x: 100
-                pos_hint: {'center_x':0.1,'center_y':0.9}
-                size_hint: (0.1, 0.1)
-                on_release: root.openPopup(1)
             BoxLayout
                 size_hint: (1,1)
                 pos: self.parent.pos
                 orientation: 'vertical'
                 canvas:
                     Color:
-                        rgba: 1, 1, 1, 0.5
+                        rgba: 1, 1, 1, 1
                     Rectangle:
                         pos: self.pos
                         size: self.size
@@ -195,14 +185,16 @@
                             pos: self.pos
                             size: self.size
                     orientation: 'horizontal'
-                    padding: (self.height * 0.2,self.height *  0.2, self.height * 0.2,self.height *  0.2)
-                    spacing: self.height * 0.2
+                    padding: (self.height * 0.3,self.height *  0.3, self.height * 0.3,self.height *  0.3)
+                    spacing: self.height * 0.3
                     Button
-                        size_hint: (0.3, 1)
-                        text:'Auswahl 1'
+                        size_hint: (self.height * 0.5, self.height * 0.5)
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                        text:'A'
                     Button
                         size_hint: (0.7, 1)
                         text:'Auswahl 1'
+                        on_release: root.openPopup(3)
                 BoxLayout
                     size_hint: (1, 1)
                     canvas:
@@ -212,14 +204,16 @@
                             pos: self.pos
                             size: self.size
                     orientation: 'horizontal'
-                    padding: (self.height * 0.2,self.height *  0.2, self.height * 0.2,self.height *  0.2)
-                    spacing: self.height * 0.2
+                    padding: (self.height * 0.3,self.height *  0.3, self.height * 0.3,self.height *  0.3)
+                    spacing: self.height * 0.3
                     Button
-                        size_hint: (0.3, 1)
-                        text:'Auswahl 2'
+                        size_hint: (self.height * 0.5, self.height * 0.5)
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                        text:'A'
                     Button
                         size_hint: (0.7, 1)
                         text:'Auswahl 2'
+                        on_release: root.openPopup(3)
                 BoxLayout
                     size_hint: (1, 1)
                     canvas:
@@ -229,16 +223,61 @@
                             pos: self.pos
                             size: self.size
                     orientation: 'horizontal'
-                    padding: (self.height * 0.2,self.height *  0.2, self.height * 0.2,self.height *  0.2)
-                    spacing: self.height * 0.2
+                    padding: (self.height * 0.3,self.height *  0.3, self.height * 0.3,self.height *  0.3)
+                    spacing: self.height * 0.3
                     Button
-                        size_hint: (0.3, 1)
-                        text:'Auswahl 3'
+                        size_hint: (self.height * 0.5, self.height * 0.5)
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                        text:'A'
                     Button
                         size_hint: (0.7, 1)
                         text:'Auswahl 3'
+                        on_release: root.openPopup(3)
+            Button
+                x: 100
+                pos_hint: {'center_x':0.9,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.closePopup(2)
+            Button
+                x: 100
+                pos_hint: {'center_x':0.1,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.openPopup(1)
+                        
         FloatLayout
             id: popup_three
             pos_hint: {'center_x':0.5,'center_y':0.5}
             size_hint: (None, 0.5)
             size: self.height, self.height
+            # canvas:
+            #     Color:
+            #         rgba: 1, 1, 1, 0.5
+            #     Rectangle:
+            #         pos: self.pos
+            #         size: self.size
+            padding: (self.height * 0,self.height *  0.2, self.height * 0,self.height *  0)
+            BoxLayout
+                id: box_dropdown 
+                size_hint: (1,1)
+                pos: self.parent.pos
+                orientation: 'vertical'
+                canvas:
+                    Color:
+                        rgba: 1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                padding: (self.height * 0,self.height *  0.2, self.height * 0,self.height *  0)
+
+            Button
+                x: 100
+                pos_hint: {'center_x':0.9,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.closePopup(3)
+            Button
+                x: 100
+                pos_hint: {'center_x':0.1,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.openPopup(2)
+
+
