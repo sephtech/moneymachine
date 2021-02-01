@@ -29,14 +29,14 @@ class mainFrame(FloatLayout):
         # self.openPopup(1)
         # self.openPopup(2)
         self.openPopup(3)
-
+        self.updateGraph()
         self.ti_blocker = True
         
 
 
 
     def autocomplete(self, num):
-        print("Complete %d %s" % (num, self.ti_blocker))
+        #print("Complete %d %s" % (num, self.ti_blocker))
         if self.ti_blocker:
             if num == 1:
                 ti = self.ids.coin1
@@ -70,7 +70,7 @@ class mainFrame(FloatLayout):
                 ti.text = text
 
     def coinConfirm(self, num):
-        print("Confirm %d %s" % (num, self.ti_blocker))
+        #print("Confirm %d %s" % (num, self.ti_blocker))
         if num == 1:
             ti = self.ids.coin1
             if ti.focus == False:
@@ -129,15 +129,15 @@ class mainFrame(FloatLayout):
         for c in range(0,2):
             # create data
             if (c == 1 and coin1 != '') or (c == 2 and coin2 != '') or (c == 3 and coin3 != ''):
-                print("coin %d", c)
+                print("coin ", c)
                 values= 1
                         
                 # use the plot function
                 plt.plot(values, color=colors[c])
 
 
-                graphGrid.clear_widgets()
-                graphGrid.add_widget(FigureCanvasKivyAgg(plt.gcf()))
+        graphGrid.clear_widgets()
+        graphGrid.add_widget(FigureCanvasKivyAgg(plt.gcf()))
 
 
         print(timeframe)
@@ -145,7 +145,7 @@ class mainFrame(FloatLayout):
         print('Finished')
 
     def closePopup(self, num):
-        print('close')
+        #print('close')
         if num == 1:
             p = self.ids.popup_one
         if num == 2:
@@ -160,7 +160,7 @@ class mainFrame(FloatLayout):
             child.opacity = 0
 
     def openPopup(self, num):
-        print('open')
+        #print('open')
         if num == 1:
             p = self.ids.popup_one
             self.closePopup(2)
