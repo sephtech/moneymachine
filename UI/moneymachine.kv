@@ -64,6 +64,7 @@
                 orientation: 'horizontal'
                 # Grafik
                 BoxLayout
+                    id: graphGrid
                     size_hint: (0.8, 1)
                     canvas:
                         Color:
@@ -249,26 +250,60 @@
             pos_hint: {'center_x':0.5,'center_y':0.5}
             size_hint: (None, 0.5)
             size: self.height, self.height
-            # canvas:
-            #     Color:
-            #         rgba: 1, 1, 1, 0.5
-            #     Rectangle:
-            #         pos: self.pos
-            #         size: self.size
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, 0.5
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
             padding: (self.height * 0,self.height *  0.2, self.height * 0,self.height *  0)
             BoxLayout
-                id: box_dropdown 
-                size_hint: (1,1)
+                id: box_coins
+                size_hint: (0.7,0.8)
+                pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                 pos: self.parent.pos
                 orientation: 'vertical'
                 canvas:
                     Color:
-                        rgba: 1, 1, 1, 1
+                        rgba: 1, 1, 0, 1
                     Rectangle:
                         pos: self.pos
                         size: self.size
-                padding: (self.height * 0,self.height *  0.2, self.height * 0,self.height *  0)
-
+                padding: (self.height * 0,self.height *  0.1, self.height * 0,self.height *  0.1)
+                spacing: self.height * 0.07
+                TextInput
+                    id: coin1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.25}
+                    size_hint: 1,1
+                    multiline: False
+                    hint_text: 'Coin 1'
+                    on_text: root.autocomplete(1)
+                    on_focus: root.coinConfirm(1)
+                    write_tab: False
+                TextInput
+                    id: coin2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size_hint: 1,1
+                    multiline: False
+                    hint_text: 'Coin 2'
+                    on_text: root.autocomplete(2)
+                    on_focus: root.coinConfirm(2)
+                    write_tab: False
+                TextInput
+                    id: coin3
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+                    size_hint: 1,1
+                    multiline: False
+                    hint_text: 'Coin 3'
+                    on_text: root.autocomplete(3)
+                    on_focus: root.coinConfirm(3)
+                    write_tab: False
+                Button                    
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                    text: 'Bestätigen'
+                    size_hint: 1,1
+                    on_release: root.closePopup(3)
+                    
             Button
                 x: 100
                 pos_hint: {'center_x':0.9,'center_y':0.9}
