@@ -15,7 +15,7 @@ class NetworkTraining():
         self.validation_pct = 0.05
         self.test_pct = 0.2
         self.epochs = 5
-        self.batch_size = 256
+        self.batch_size = 64
         self.name_prefix = f"{self.seq_len}-seq-{self.future_period}-pred-{int(time.time())}"
         self.root_path = pathlib.Path(__file__).parent.parent.absolute()
 
@@ -26,9 +26,9 @@ class NetworkTraining():
         model.add(Dropout(0.2))
         model.add(BatchNormalization())
 
-        model.add(LSTM(128, activation="relu", return_sequences=True))
-        model.add(Dropout(0.2))
-        model.add(BatchNormalization())
+        #model.add(LSTM(128, activation="relu", return_sequences=True))
+        #model.add(Dropout(0.2))
+        #model.add(BatchNormalization())
 
         model.add(LSTM(128, activation="relu"))
         model.add(Dropout(0.2))
@@ -39,12 +39,12 @@ class NetworkTraining():
 
         model.add(Dense(1, activation="linear"))
 
-        opt = tensorflow.keras.optimizers.Adam(lr=0.004, decay=1e-5)
+        opt = tensorflow.keras.optimizers.Adam(lr=0.001, decay=1e-6)
 
         model.compile(
             loss='mse',
             optimizer=opt,
-            metrics=['mae', 'mean_absolute_percentage_error']
+            metrics=['mae']
         )
 
         tensorboard = TensorBoard(log_dir=f"{self.root_path}\\logs\\{self.name_prefix}")

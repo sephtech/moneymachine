@@ -11,7 +11,7 @@ from tensorflow.keras.utils import plot_model
 
 def tDB():
     
-    activate_coins.activateCoins()
+    test = db.DatabaseInteraction()
 
 def tnn():
 
@@ -51,8 +51,8 @@ def trun():
 def tcalc():
 
     calc = cl.Calculations()
-    #calc.predictValue("btc", 60, 288)
-    calc.getGraphAbsoluteData("btc")
+    print(calc.predictValue("btc", 60, 72))
+    #calc.getGraphAbsoluteData("btc")
 
 def tsave():
 

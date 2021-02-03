@@ -20,11 +20,12 @@ def activateCoins():
     __updateNewCoins__(False, db, databaseInteraction)
     databaseInteraction.updateAllCoins()
 
+    #if newCoins:
     print("Train models for every coin with new data...")
     __trainNewModels__()
 
-    for coin in newCoins:
-        __setCoinActive__(coin)
+    #    for coin in newCoins:
+    #        __setCoinActive__(coin)
 
     print("Done... Restart app!")
 
@@ -81,10 +82,10 @@ def __setCoinActive__(db, coin):
 
 def __trainNewModels__():
 
-    #coins = __getDefindedCoins__()
-    coins = ["btc"]
-    seq_lens = [120]
-    future_periods = [288]
+    coins = __getDefindedCoins__()
+    #coins = ["btc"]
+    seq_lens = [60]
+    future_periods = [72]
     
     for i in range(0, len(seq_lens)):
 
