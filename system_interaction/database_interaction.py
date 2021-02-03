@@ -16,7 +16,8 @@ class DatabaseInteraction():
         #initilize database ineraction
         os.environ["TZ"] = "Europe/London"
 
-        if self.checkRunning == False:
+        status = self.checkRunning()
+        if not status:
             self.startDatabase()
             print("Waiting for DB to come online...")
             time.sleep(5)
@@ -206,17 +207,18 @@ class DatabaseInteraction():
             else: 
                 missingValues = cb.getMissingCoinData(coin, i[2])
 
-        print("Writing missing values of coin {} into database...".format(coin))
-        for index in tqdm.trange(len(missingValues)):
+        if len(missingValues) > 0:
+            print("Writing missing values of coin {} into database...".format(coin))
+            for index in tqdm.trange(len(missingValues)):
 
-            if index == len(missingValues) - 1:
-                current_coin_version = missingValues[index][0]
-            else:
-                current_coin_version = None
-            db_cursor.execute(f"INSERT INTO {coin}(date, low, high, open, close, volume) VALUES('{missingValues[index][0]}', '{missingValues[index][1]}', '{missingValues[index][2]}', '{missingValues[index][3]}', '{missingValues[index][4]}', '{missingValues[index][5]}');")
+                if index == len(missingValues) - 1:
+                    current_coin_version = missingValues[index][0]
+                else:
+                    current_coin_version = None
+                db_cursor.execute(f"INSERT INTO {coin}(date, low, high, open, close, volume) VALUES('{missingValues[index][0]}', '{missingValues[index][1]}', '{missingValues[index][2]}', '{missingValues[index][3]}', '{missingValues[index][4]}', '{missingValues[index][5]}');")
 
-        self.db.commit()
-        self.__writeCoinVersion__(coin, current_coin_version)
+            self.db.commit()
+            self.__writeCoinVersion__(coin, current_coin_version)
 
     def __writeCoinVersion__(self, coin, version):
 
