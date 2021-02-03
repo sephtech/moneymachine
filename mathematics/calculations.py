@@ -114,8 +114,8 @@ class Calculations():
             x = []
             y = []
             for timestamp in timeline:
-                x.append(timestamp[0])
-                y.append(timestamp[1])
+                x.append(int(timestamp[0]))
+                y.append(float(timestamp[1]))
             
             transformedTimelines.append(x)
             transformedTimelines.append(y)
@@ -137,6 +137,7 @@ class Calculations():
 
         #calculates percentages for every other value
         relativeValues = []
+        relativeValues.append(0)
         for value in data[1:]:
 
             diff = float(value) - startValue
