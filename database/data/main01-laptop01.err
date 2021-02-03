@@ -1,0 +1,233 @@
+2021-02-01T11:42:12.448928Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld.exe (mysqld 8.0.23) starting as process 1976
+2021-02-01T11:42:12.469139Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:42:13.625406Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-01T11:42:13.894388Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-01T11:42:14.111713Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-01T11:42:14.114500Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-01T11:42:14.201112Z 0 [System] [MY-010931] [Server] C:\Users\birkle\Python\Database\bin\mysqld.exe: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-01T11:43:36.450210Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 12732
+2021-02-01T11:43:36.472374Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:43:37.899723Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-01T11:43:38.165037Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-01T11:43:38.217934Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-02-01T11:43:38.228557Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-02-01T11:43:38.314198Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-01T11:43:38.315203Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-01T11:43:38.398110Z 0 [System] [MY-010931] [Server] C:\Users\birkle\Python\Database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-01T11:46:06.291914Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 11784
+2021-02-01T11:46:06.320593Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:46:07.819703Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-01T11:46:08.286373Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-01T11:46:08.325366Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-02-01T11:46:08.338044Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-02-01T11:46:08.412277Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-01T11:46:08.413557Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-01T11:46:08.475612Z 0 [System] [MY-010931] [Server] C:\Users\birkle\Python\Database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-01T11:46:18.218571Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 9992
+2021-02-01T11:46:18.251398Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:46:18.253553Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T11:46:18.254554Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T11:46:18.256193Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T11:46:18.257382Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T11:46:18.258658Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T11:46:18.260164Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T11:46:27.341809Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 7868
+2021-02-01T11:46:27.368522Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:46:27.371200Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T11:46:27.372250Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T11:46:27.373501Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T11:46:27.374745Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T11:46:27.375668Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T11:46:27.376831Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T11:47:47.398726Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 3504
+2021-02-01T11:47:47.429041Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:47:48.557672Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-01T11:47:48.786668Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-01T11:47:48.825199Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-02-01T11:47:48.835072Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-02-01T11:47:48.900650Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-01T11:47:48.901934Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-01T11:47:48.969126Z 0 [System] [MY-010931] [Server] C:\Users\birkle\Python\Database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-01T11:47:49.244978Z 8 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.23).
+2021-02-01T11:47:49.246428Z 0 [System] [MY-013105] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Normal shutdown.
+2021-02-01T11:47:50.166723Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T11:48:58.536164Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 12684
+2021-02-01T11:48:58.571207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:48:59.596338Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-01T11:48:59.940374Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-01T11:49:00.126573Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-01T11:49:00.128474Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-01T11:49:00.219798Z 0 [System] [MY-010931] [Server] C:\Users\birkle\Python\Database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-01T11:49:14.562284Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 13332
+2021-02-01T11:49:14.601357Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:49:16.180928Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-01T11:49:16.430069Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-01T11:49:16.466858Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-02-01T11:49:16.476225Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-02-01T11:49:16.551696Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-01T11:49:16.553098Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-01T11:49:16.622624Z 0 [System] [MY-010931] [Server] C:\Users\birkle\Python\Database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-01T11:49:27.592643Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 3660
+2021-02-01T11:49:27.635245Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:49:28.934071Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-01T11:49:29.228340Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-01T11:49:29.272457Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-02-01T11:49:29.283785Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-02-01T11:49:29.354031Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-01T11:49:29.355321Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-01T11:49:29.422216Z 0 [System] [MY-010931] [Server] C:\Users\birkle\Python\Database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-01T11:49:29.432515Z 8 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.23).
+2021-02-01T11:49:29.433853Z 0 [System] [MY-013105] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Normal shutdown.
+2021-02-01T11:49:30.530831Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T11:49:46.940048Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 9544
+2021-02-01T11:49:46.966548Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:49:48.049244Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-01T11:49:48.343727Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-01T11:49:48.443326Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-01T11:49:48.444629Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-01T11:49:48.512957Z 0 [System] [MY-010931] [Server] C:\Users\birkle\Python\Database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-01T11:49:57.005017Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 1808
+2021-02-01T11:49:57.052301Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:49:57.056780Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T11:49:57.058286Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T11:49:57.060032Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T11:49:57.061776Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T11:49:57.063285Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T11:49:57.064933Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T11:50:04.444850Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 10988
+2021-02-01T11:50:04.471838Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T11:50:04.473914Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T11:50:04.474866Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T11:50:04.475888Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T11:50:04.476982Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T11:50:04.477944Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T11:50:04.479041Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:03:54.620830Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 9236
+2021-02-01T12:03:54.645492Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:03:54.648380Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:03:54.649700Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:03:54.651012Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:03:54.652242Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:03:54.653156Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:03:54.654307Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:04:37.277641Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 10544
+2021-02-01T12:04:37.303991Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:04:37.307092Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:04:37.308558Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:04:37.309600Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:04:37.310779Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:04:37.311774Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:04:37.313228Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:19:15.448681Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 9936
+2021-02-01T12:19:15.472629Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:19:16.760444Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-01T12:19:17.020627Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-01T12:19:17.060324Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-02-01T12:19:17.073296Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-02-01T12:19:17.150531Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-01T12:19:17.151723Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-01T12:19:17.218465Z 0 [System] [MY-010931] [Server] C:\Users\birkle\Python\Database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-01T12:19:24.318473Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 6812
+2021-02-01T12:19:24.365321Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:19:24.367930Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:19:24.368987Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:19:24.370038Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:19:24.371228Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:19:24.372265Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:19:24.373477Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:38:50.853149Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 12356
+2021-02-01T12:38:50.875099Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:38:50.877782Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:38:50.878796Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:38:50.879927Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:38:50.881146Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:38:50.882488Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:38:50.884267Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:41:25.452415Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 1772
+2021-02-01T12:41:25.474984Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:41:25.477146Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:41:25.478156Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:41:25.479160Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:41:25.480354Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:41:25.481691Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:41:25.483522Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:41:43.683066Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 13268
+2021-02-01T12:41:43.706482Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:41:43.709764Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:41:43.711131Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:41:43.712569Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:41:43.714212Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:41:43.715157Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:41:43.716377Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:43:20.666882Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 14328
+2021-02-01T12:43:20.691942Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:43:20.694952Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:43:20.696372Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:43:20.697823Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:43:20.699384Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:43:20.700330Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:43:20.701529Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:43:32.024219Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 10004
+2021-02-01T12:43:32.045608Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:43:32.047844Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:43:32.048853Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:43:32.049864Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:43:32.051079Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:43:32.052421Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:43:32.054263Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:44:03.430752Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 832
+2021-02-01T12:44:03.456411Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:44:03.458478Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:44:03.459474Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:44:03.460479Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:44:03.461639Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:44:03.463114Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:44:03.464903Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T12:44:17.351048Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 10512
+2021-02-01T12:44:17.377241Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T12:44:17.379799Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:44:17.380818Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T12:44:17.381834Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T12:44:17.383070Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T12:44:17.384404Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T12:44:17.386171Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T14:49:43.068214Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 10484
+2021-02-01T14:49:43.166289Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T14:49:43.168915Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:49:43.170112Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:49:43.172330Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T14:49:43.174197Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T14:49:43.175994Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T14:49:43.178070Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T14:50:01.245827Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 9792
+2021-02-01T14:50:01.274423Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T14:50:01.277933Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:50:01.279083Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:50:01.280617Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T14:50:01.282280Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T14:50:01.283699Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T14:50:01.285811Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T14:50:14.491586Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 1016
+2021-02-01T14:50:14.516778Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T14:50:14.519158Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:50:14.520298Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:50:14.522544Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T14:50:14.524389Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T14:50:14.525776Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T14:50:14.527608Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T14:50:31.687310Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 14564
+2021-02-01T14:50:31.717903Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T14:50:31.721264Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:50:31.722293Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:50:31.723287Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T14:50:31.724422Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T14:50:31.725365Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T14:50:31.726681Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
+2021-02-01T14:51:33.817271Z 0 [System] [MY-010116] [Server] C:\Users\birkle\Python\Database\bin\mysqld (mysqld 8.0.23) starting as process 10300
+2021-02-01T14:51:33.843137Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-01T14:51:33.845565Z 1 [ERROR] [MY-012271] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:51:33.846563Z 1 [ERROR] [MY-012278] [InnoDB] The innodb_system data file 'ibdata1' must be writable
+2021-02-01T14:51:33.847589Z 1 [ERROR] [MY-010334] [Server] Failed to initialize DD Storage Engine
+2021-02-01T14:51:33.848677Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2021-02-01T14:51:33.849721Z 0 [ERROR] [MY-010119] [Server] Aborting
+2021-02-01T14:51:33.851130Z 0 [System] [MY-010910] [Server] C:\Users\birkle\Python\Database\bin\mysqld: Shutdown complete (mysqld 8.0.23)  MySQL Community Server - GPL.
