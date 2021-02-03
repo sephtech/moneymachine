@@ -1,5 +1,6 @@
 <mainFrame>
     FloatLayout
+        id: main_frame
         BoxLayout
             size_hint: (1, 1)
             orientation: 'vertical'
@@ -149,12 +150,12 @@
                         # size_hint: (0.5, 0.5)
                         text:'Auswahl'
                         on_release: root.openPopup(2)
-                BoxLayout
-                    size_hint: (1, 0.2)
-                    padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.3)
+                # BoxLayout
+                #     size_hint: (1, 0.2)
+                #     padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.3)
                     
-                    ProgressBar
-                        id: progress_update
+                #     ProgressBar
+                #         id: progress_update
             Button
                 x: 100
                 pos_hint: {'center_x':0.9,'center_y':0.9}
