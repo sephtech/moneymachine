@@ -51,11 +51,11 @@ def trun():
 def tcalc():
 
     calc = cl.Calculations()
-    #calc.predictValue("btc", 60, 288)
-    calc.getGraphAbsoluteData("btc")
+    calc.predictValue("btc", 60, 288)
+    # calc.getGraphAbsoluteData("btc")
 
 def tsave():
 
     activate_coins.__saveModel__("btc", 288)
 
-tnn()
+tcalc()

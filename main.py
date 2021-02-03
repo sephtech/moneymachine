@@ -1,8 +1,8 @@
-from UI import moneymachineApp
+import UI.moneymachineApp as mA
 
 
 def main():
-    moneymachineApp.startApp()
+    mA.startApp()
 
 if __name__ == '__main__':
     main()

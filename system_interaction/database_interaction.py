@@ -16,7 +16,7 @@ class DatabaseInteraction():
         #initilize database ineraction
         os.environ["TZ"] = "Europe/London"
 
-        if self.checkRunning == False:
+        if self.checkRunning() == False:
             self.startDatabase()
             print("Waiting for DB to come online...")
             time.sleep(5)
