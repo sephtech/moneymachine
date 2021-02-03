@@ -1,0 +1,321 @@
+<mainFrame>
+    FloatLayout
+        id: main_frame
+        BoxLayout
+            size_hint: (1, 1)
+            orientation: 'vertical'
+            # Top Box
+            BoxLayout
+                size_hint: (1, 0.1)
+                orientation: 'horizontal'
+                # Auswahl Zeitraum
+                BoxLayout
+                    size_hint: (0.8, 1)
+                    canvas:
+                        Color:
+                            rgba: 0, 1, 0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size 
+                    padding: (self.height * 1,self.height *  0.2, self.height * 1,self.height *  0.1)
+                    # spacing: self.height * 0.1
+                    ToggleButton
+                        id: toggle_time_tag
+                        text: 'Tag'
+                        group: 'time'
+                        on_press: root.updateGraph()
+                        size_hint: (0.2, 1)
+                    ToggleButton
+                        id: toggle_time_woche
+                        text: 'Woche'
+                        group: 'time'
+                        on_press: root.updateGraph()
+                        size_hint: (0.2, 1)
+                    ToggleButton
+                        id: toggle_time_monat
+                        text: 'Monat'
+                        group: 'time'
+                        on_press: root.updateGraph()
+                        size_hint: (0.2, 1)
+                    ToggleButton
+                        id: toggle_time_jahr
+                        text: 'Jahr'
+                        group: 'time'
+                        on_press: root.updateGraph()
+                        size_hint: (0.2, 1)
+                # Navigation
+                BoxLayout
+                    size_hint: (0.2, 1)
+                    canvas:
+                        Color:
+                            rgba: 1, 0, 0, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    padding: (self.height * 0.1,self.height *  0.2, self.height * 0.2,self.height *  0.1)
+                    spacing: self.height * 0.2
+                    Button
+                        text: 'Menu'
+                        size_hint: (0.2, 1)
+                        on_release: root.openPopup(1)
+                    Button
+                        text: 'Update'
+                        size_hint: (0.2, 1)
+            # Bottom Box
+            BoxLayout
+                size_hint: (1, 0.9)
+                orientation: 'horizontal'
+                # Grafik
+                BoxLayout
+                    id: graphGrid
+                    size_hint: (0.8, 1)
+                    canvas:
+                        Color:
+                            rgba: 0, 0, 1, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    # Button
+                    #     size_hint: (0.2, 1)
+                # Legende
+                BoxLayout
+                    size_hint: (0.2, 1)
+                    canvas:
+                        Color:
+                            rgba: 1, 1, 1, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    # Button
+                    #     size_hint: (0.2, 1)
+
+
+        FloatLayout
+            id: popup_one
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            size_hint: (None, 0.5)
+            size: self.height, self.height
+            BoxLayout
+                size_hint: (1,1)
+                pos: self.parent.pos
+                orientation: 'vertical'
+                canvas:
+                    Color:
+                        rgba: 1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                BoxLayout
+                    size_hint: (1, 0.4)
+                    canvas:
+                        Color:
+                            rgba: 1, 0, 1, 0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    orientation: 'horizontal'
+                    padding: (self.height * 0.2,self.height *  0.2, self.height * 0.2,self.height *  0.2)
+                    spacing: self.height * 0.2
+                    Label
+                        canvas:
+                            Color:
+                                rgba: 0, 1, 1, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                        size_hint: (0.5, 0.5)
+                        text:'Update laden'
+                    Label
+                        canvas:
+                            Color:
+                                rgba: 0, 1, 1, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                        size_hint: (0.5, 0.5)
+                        text:'Währungen\nauswählen'
+                BoxLayout
+                    size_hint: (1, 0.4)
+                    canvas:
+                        Color:
+                            rgba: 1, 0, 0, 0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    orientation: 'horizontal'
+                    padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.3)
+                    spacing: self.height * 0.2
+                    Button
+                        # size_hint: (0.5, 0.5)
+                        text:'Go'
+                    Button
+                        # size_hint: (0.5, 0.5)
+                        text:'Auswahl'
+                        on_release: root.openPopup(2)
+                # BoxLayout
+                #     size_hint: (1, 0.2)
+                #     padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.3)
+                    
+                #     ProgressBar
+                #         id: progress_update
+            Button
+                x: 100
+                pos_hint: {'center_x':0.9,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.closePopup(1)
+
+        FloatLayout
+            id: popup_two
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            size_hint: (None, 0.5)
+            size: self.height, self.height
+            BoxLayout
+                size_hint: (1,1)
+                pos: self.parent.pos
+                orientation: 'vertical'
+                canvas:
+                    Color:
+                        rgba: 1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                padding: (self.height * 0,self.height *  0.2, self.height * 0,self.height *  0)
+                BoxLayout
+                    size_hint: (1, 1)
+                    canvas:
+                        Color:
+                            rgba: 1, 0, 1, 0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    orientation: 'horizontal'
+                    padding: (self.height * 0.3,self.height *  0.3, self.height * 0.3,self.height *  0.3)
+                    spacing: self.height * 0.3
+                    Button
+                        size_hint: (self.height * 0.5, self.height * 0.5)
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                        text:'A'
+                    Button
+                        size_hint: (0.7, 1)
+                        text:'Auswahl 1'
+                        on_release: root.openPopup(3)
+                BoxLayout
+                    size_hint: (1, 1)
+                    canvas:
+                        Color:
+                            rgba: 1, 0, 1, 0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    orientation: 'horizontal'
+                    padding: (self.height * 0.3,self.height *  0.3, self.height * 0.3,self.height *  0.3)
+                    spacing: self.height * 0.3
+                    Button
+                        size_hint: (self.height * 0.5, self.height * 0.5)
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                        text:'A'
+                    Button
+                        size_hint: (0.7, 1)
+                        text:'Auswahl 2'
+                        on_release: root.openPopup(3)
+                BoxLayout
+                    size_hint: (1, 1)
+                    canvas:
+                        Color:
+                            rgba: 1, 0, 1, 0
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    orientation: 'horizontal'
+                    padding: (self.height * 0.3,self.height *  0.3, self.height * 0.3,self.height *  0.3)
+                    spacing: self.height * 0.3
+                    Button
+                        size_hint: (self.height * 0.5, self.height * 0.5)
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                        text:'A'
+                    Button
+                        size_hint: (0.7, 1)
+                        text:'Auswahl 3'
+                        on_release: root.openPopup(3)
+            Button
+                x: 100
+                pos_hint: {'center_x':0.9,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.closePopup(2)
+            Button
+                x: 100
+                pos_hint: {'center_x':0.1,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.openPopup(1)
+                        
+        FloatLayout
+            id: popup_three
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            size_hint: (None, 0.5)
+            size: self.height, self.height
+            canvas:
+                Color:
+                    rgba: 1, 1, 1, 0.5
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            padding: (self.height * 0,self.height *  0.2, self.height * 0,self.height *  0)
+            BoxLayout
+                id: box_coins
+                size_hint: (0.7,0.8)
+                pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                pos: self.parent.pos
+                orientation: 'vertical'
+                canvas:
+                    Color:
+                        rgba: 1, 1, 0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                padding: (self.height * 0,self.height *  0.1, self.height * 0,self.height *  0.1)
+                spacing: self.height * 0.07
+                TextInput
+                    id: coin1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.25}
+                    size_hint: 1,1
+                    multiline: False
+                    hint_text: 'Coin 1'
+                    on_text: root.autocomplete(1)
+                    on_focus: root.coinConfirm(1)
+                    write_tab: False
+                TextInput
+                    id: coin2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size_hint: 1,1
+                    multiline: False
+                    hint_text: 'Coin 2'
+                    on_text: root.autocomplete(2)
+                    on_focus: root.coinConfirm(2)
+                    write_tab: False
+                TextInput
+                    id: coin3
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+                    size_hint: 1,1
+                    multiline: False
+                    hint_text: 'Coin 3'
+                    on_text: root.autocomplete(3)
+                    on_focus: root.coinConfirm(3)
+                    write_tab: False
+                Button                    
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                    text: 'Bestätigen'
+                    size_hint: 1,1
+                    on_release: root.closePopup(3)
+                    
+            Button
+                x: 100
+                pos_hint: {'center_x':0.9,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.closePopup(3)
+            Button
+                x: 100
+                pos_hint: {'center_x':0.1,'center_y':0.9}
+                size_hint: (0.1, 0.1)
+                on_release: root.openPopup(2)
+
+
