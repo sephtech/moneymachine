@@ -58,4 +58,8 @@ def tsave():
 
     activate_coins.__saveModel__("btc", 288)
 
-tcalc()
+def tupdate():
+    dbi = db.DatabaseInteraction()
+    dbi.updateAllCoins()
+
+tupdate()
