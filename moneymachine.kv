@@ -21,25 +21,25 @@
                     # spacing: self.height * 0.1
                     ToggleButton
                         id: toggle_time_day
-                        text: 'Tag'
+                        text: 'Day'
                         group: 'time'
                         on_press: root.updateGraph()
                         size_hint: (0.2, 1)
                     ToggleButton
                         id: toggle_time_week
-                        text: 'Woche'
+                        text: 'Week'
                         group: 'time'
                         on_press: root.updateGraph()
                         size_hint: (0.2, 1)
                     ToggleButton
                         id: toggle_time_month
-                        text: 'Monat'
+                        text: 'Month'
                         group: 'time'
                         on_press: root.updateGraph()
                         size_hint: (0.2, 1)
                     ToggleButton
                         id: toggle_time_year
-                        text: 'Jahr'
+                        text: 'Year'
                         group: 'time'
                         on_press: root.updateGraph()
                         size_hint: (0.2, 1)
@@ -146,54 +146,61 @@
                     Rectangle:
                         pos: self.pos
                         size: self.size
-                BoxLayout
-                    size_hint: (1, 0.4)
-                    canvas:
-                        Color:
-                            rgba: 1, 0, 1, 0
-                        Rectangle:
-                            pos: self.pos
-                            size: self.size
-                    orientation: 'horizontal'
-                    padding: (self.height * 0.2,self.height *  0.2, self.height * 0.2,self.height *  0.2)
-                    spacing: self.height * 0.2
-                    Label
-                        canvas:
-                            Color:
-                                rgba: 0, 1, 1, 1
-                            Rectangle:
-                                pos: self.pos
-                                size: self.size
-                        size_hint: (0.5, 0.5)
-                        text:'Update laden'
-                    Label
-                        canvas:
-                            Color:
-                                rgba: 0, 1, 1, 1
-                            Rectangle:
-                                pos: self.pos
-                                size: self.size
-                        size_hint: (0.5, 0.5)
-                        text:'Währungen\nauswählen'
-                BoxLayout
-                    size_hint: (1, 0.4)
-                    canvas:
-                        Color:
-                            rgba: 1, 0, 0, 0
-                        Rectangle:
-                            pos: self.pos
-                            size: self.size
-                    orientation: 'horizontal'
-                    padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.3)
-                    spacing: self.height * 0.2
-                    Button
-                        # size_hint: (0.5, 0.5)
-                        text:'Go'
-                        on_release: root.updateAll()
-                    Button
-                        # size_hint: (0.5, 0.5)
-                        text:'Auswahl'
-                        on_release: root.openPopup(2)
+                padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.2)
+                spacing: self.height * 0.1
+                Button
+                    # size_hint: (0.5, 0.5)
+                    text:'Update Database'
+                    on_release: root.updateAll()
+                    markup: True
+                Button
+                    # size_hint: (0.5, 0.5)
+                    text:'Select Coins'
+                    on_release: root.openPopup(2)
+                    markup: True
+                # BoxLayout
+                #     size_hint: (1, 0.4)
+                #     canvas:
+                #         Color:
+                #             rgba: 1, 0, 1, 0
+                #         Rectangle:
+                #             pos: self.pos
+                #             size: self.size
+                #     orientation: 'horizontal'
+                #     padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.2)
+                #     spacing: self.height * 0.2
+                #     Label
+                #         canvas:
+                #             Color:
+                #                 rgba: 0.88, 0.88, 0.88, 1
+                #             Rectangle:
+                #                 pos: self.pos
+                #                 size: self.size
+                #         text:'[b]load update[/b]'
+                #         size_hint: (0.5, 0.5)
+                #         markup: True
+                #     Label
+                #         canvas:
+                #             Color:
+                #                 rgba: 0.88, 0.88, 0.88, 1
+                #             Rectangle:
+                #                 pos: self.pos
+                #                 size: self.size
+                #         text:'[b]select coins[/b]'
+                #         size_hint: (0.5, 0.5)
+                #         markup: True
+                # BoxLayout
+                #     size_hint: (1, 0.4)
+                #     canvas:
+                #         Color:
+                #             rgba: 1, 0, 0, 0
+                #         Rectangle:
+                #             pos: self.pos
+                #             size: self.size
+                #     orientation: 'horizontal'
+                #     padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.3)
+                #     spacing: self.height * 0.2
+
                 # BoxLayout
                 #     size_hint: (1, 0.2)
                 #     padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.3)
@@ -203,6 +210,7 @@
             Button
                 x: 100
                 text: 'Close'
+                font_size: 12
                 pos_hint: {'center_x':0.85,'center_y':0.9}
                 size_hint: (0.2,0.1)
                 on_release: root.closePopup(1)
@@ -266,18 +274,20 @@
                     write_tab: False
                 Button                    
                     pos_hint: {'center_x': 0.5, 'center_y': 0.8}
-                    text: 'Bestätigen'
+                    text: 'Confirm'
                     size_hint: 1,1
                     on_release: root.confirmPopup()
                     
             Button
                 x: 100
+                font_size: 12
                 text: 'Back'
                 pos_hint: {'center_x':0.15,'center_y':0.9}
                 size_hint: (0.2,0.1)
                 on_release: root.openPopup(1)
             Button
                 x: 100
+                font_size: 12
                 text: 'Close'
                 pos_hint: {'center_x':0.85,'center_y':0.9}
                 size_hint: (0.2,0.1)

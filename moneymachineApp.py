@@ -140,10 +140,10 @@ class mainFrame(FloatLayout):
             self.rel_coin1_month = calc.calculateRelativeChanges(self.data_coin1_month)
             self.data_coin1_year=data_coin1[7]
             self.rel_coin1_year = calc.calculateRelativeChanges(self.data_coin1_year)
-            # self.pred_coin1_day = calc.predictValue(self.ids.coin1.text, 60, 72)
-            # self.pred_coin1_week = calc.predictValue(self.ids.coin1.text, 60, 288)
-            self.pred_coin1_day = 10000
-            self.pred_coin1_week = 20000
+            self.pred_coin1_day = calc.predictValue(self.ids.coin1.text, 60, 72)
+            self.pred_coin1_week = calc.predictValue(self.ids.coin1.text, 60, 288)
+            # self.pred_coin1_day = 10000
+            # self.pred_coin1_week = 20000
             self.coin1_read = True
             self.counter_coins += 1
         else:
@@ -163,10 +163,10 @@ class mainFrame(FloatLayout):
             self.rel_coin2_month = calc.calculateRelativeChanges(self.data_coin2_month)
             self.data_coin2_year=data_coin2[7]
             self.rel_coin2_year = calc.calculateRelativeChanges(self.data_coin2_year)
-            # self.pred_coin2_day = calc.predictValue(self.ids.coin2.text, 60, 72)
-            # self.pred_coin2_week = calc.predictValue(self.ids.coin2.text, 60, 288)
-            self.pred_coin2_day = 10000
-            self.pred_coin2_week = 20000
+            self.pred_coin2_day = calc.predictValue(self.ids.coin2.text, 60, 72)
+            self.pred_coin2_week = calc.predictValue(self.ids.coin2.text, 60, 288)
+            # self.pred_coin2_day = 10000
+            # self.pred_coin2_week = 20000
             self.coin2_read = True
             self.counter_coins += 1
         else:
@@ -186,10 +186,10 @@ class mainFrame(FloatLayout):
             self.rel_coin3_month = calc.calculateRelativeChanges(self.data_coin3_month)
             self.data_coin3_year=data_coin3[7]
             self.rel_coin3_year = calc.calculateRelativeChanges(self.data_coin3_year)
-            # self.pred_coin3_day = calc.predictValue(self.ids.coin3.text, 60, 72)
-            # self.pred_coin3_week = calc.predictValue(self.ids.coin3.text, 60, 288)
-            self.pred_coin3_day = 10000
-            self.pred_coin3_week = 20000
+            self.pred_coin3_day = calc.predictValue(self.ids.coin3.text, 60, 72)
+            self.pred_coin3_week = calc.predictValue(self.ids.coin3.text, 60, 288)
+            # self.pred_coin3_day = 10000
+            # self.pred_coin3_week = 20000
             self.coin3_read = True
             self.counter_coins += 1
         else:
@@ -336,8 +336,11 @@ class mainFrame(FloatLayout):
 
         runner = 0
         
+
         plt.tight_layout()
         fig, ax = plt.subplots()
+        ax.set_facecolor('#F5F5F5')
+        fig.patch.set_facecolor('#F5F5F5')
         for c in range(0,3):
             # create data
             if (c == 0 and self.coin1_read) or (c == 1 and self.coin2_read) or (c == 2 and self.coin3_read):
@@ -368,7 +371,7 @@ class mainFrame(FloatLayout):
                 if runner > 1: ax.set(xlabel='time', ylabel='price change [%]')
                 else: ax.set(xlabel='time', ylabel='price [$]')
                 ax.grid()
-                plt.tight_layout()
+                
 
                 # plt.grid(color='grey', linewidth=1)
                 # plt.xlim(timeconvert[0], timeconvert[len(timeconvert)-1])
