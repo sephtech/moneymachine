@@ -32,13 +32,13 @@ def activateCoins():
     databaseInteraction.updateAllCoins()
 
     #only execute if there are new coins
-    #if newCoins:
-    print("Train models for every coin with new data...")
-    __trainNewModels__()
+    if newCoins:
+        print("Train models for every coin with new data...")
+        __trainNewModels__()
 
         #activates the coins in the database
-    #    for coin in newCoins:
-    #        __setCoinActive__(coin)
+        for coin in newCoins:
+            __setCoinActive__(coin)
 
     print("Done... Restart app!")
 
@@ -139,7 +139,7 @@ def __trainNewModels__():
     #get defined coins from coins.conf
     coins = __getDefindedCoins__()
     #sets all different future periods
-    future_periods = [288]
+    future_periods = [72, 288]
     #sets all seqence lengths for the future periods
     seq_lens = [60]
     
