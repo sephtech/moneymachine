@@ -7,6 +7,7 @@ import system_interaction.database_interaction as db
 import mathematics.train_network as nn
 import tensorflow as tf
 import mathematics.calculations as cl
+import mathematics.preprocess_data as pre
 from tensorflow.keras.utils import plot_model
 
 def t_database():
@@ -29,11 +30,11 @@ def t_summary():
     '''
 
     model = tf.keras.models.load_model(
-        "C:\\Users\\birkle.SEPHTECH\\Documents\\GitHub\\moneymachine\\models\\checkpoints\\RNN_Model_Final-08-nan.model", custom_objects=None, compile=True, options=None
+        "C:\\Users\\birkle.SEPHTECH\\Documents\\GitHub\\moneymachine\\models\\btc_72.model", custom_objects=None, compile=True, options=None
     )   
 
-    model.summary()
-    plot_model(model, to_file="C:\\Users\\birkle.SEPHTECH\\Documents\\GitHub\\moneymachine\\models\\checkpoints\\RNN_Model_Final-08-nan.png")
+    print(model.summary())
+    #plot_model(model, to_file="C:\\Users\\birkle.SEPHTECH\\Documents\\GitHub\\moneymachine\\models\\checkpoints\\btc_72.png")
 
 def t_calculation():
     '''
@@ -44,4 +45,16 @@ def t_calculation():
     print(calc.predictValue("btc", 60, 72))
     #calc.getGraphAbsoluteData("btc")
 
-t_calculation()
+def t_preprocess():
+    '''
+    Test preprocessing
+    '''
+
+    pp = pre.Preprocessing("btc",60,72,0.05,0.2)
+    df = pp.__getRawData__()
+    df = pp.__shiftData__(df)
+    train, val, test = pp.__splitData__(df)
+    pp.__preprocess__(train)
+
+
+t_summary()

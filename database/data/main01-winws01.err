@@ -2226,3 +2226,12 @@
 2021-02-03T23:25:17.834971Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
 2021-02-03T23:25:17.835484Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
 2021-02-03T23:25:17.862995Z 0 [System] [MY-010931] [Server] C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2021-02-04T02:53:58.529439Z 0 [System] [MY-010116] [Server] C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\database\bin\mysqld (mysqld 8.0.23) starting as process 13648
+2021-02-04T02:53:58.541129Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-02-04T02:53:59.135893Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-02-04T02:53:59.256187Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2021-02-04T02:53:59.275844Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2021-02-04T02:53:59.279579Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2021-02-04T02:53:59.301877Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-02-04T02:53:59.302387Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2021-02-04T02:53:59.328734Z 0 [System] [MY-010931] [Server] C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\database\bin\mysqld: ready for connections. Version: '8.0.23'  socket: ''  port: 3306  MySQL Community Server - GPL.

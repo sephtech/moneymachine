@@ -66,7 +66,7 @@ class NetworkTraining():
         model.add(Dense(32, activation="relu"))
         model.add(Dropout(0.2))
 
-        ##adds the output dense layer
+        #adds the output dense layer
         model.add(Dense(1, activation="linear"))
 
         #creates the optimizer adam with specified learning rate and decay
