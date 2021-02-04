@@ -4,3 +4,7 @@
 =======
 *.pyc
 >>>>>>> Stashed changes
+.vscode/settings.json
+system_interaction/__pycache__/database_interaction.cpython-38.pyc
+database/data/DESKTOP-B7R7UUG.err
+*.pyc
