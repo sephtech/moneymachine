@@ -39,7 +39,6 @@ class Calculations():
 
         #scale the future value inverse
         returnValue = scaler.inverse_transform(predictedValue)
-        print(returnValue)
 
         return returnValue[0][0]
 
