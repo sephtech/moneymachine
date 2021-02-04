@@ -1,0 +1,1476 @@
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m test
+2021-02-03 20:31:28.072472: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2021-02-03 20:31:28.072594: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+This process will need a lot of time!
+ca. 4h per coin in coins.conf
+Cancel if you dont have the time!
+Dont shutdown PC if you proceed!
+
+Download and save new coins...
+((1, 'btc', '1612379400', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.48it/s]
+Writing missing values of coin btc into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 1332.79it/s]
+((3, 'eth', '1612379400', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.61it/s]
+Writing missing values of coin eth into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 2001.10it/s]
+((11, 'ltc', '1612379400', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.68it/s]
+Writing missing values of coin ltc into database...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 666.11it/s]
+Update all coins...
+((1, 'btc', '1612380600', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.06it/s]
+((3, 'eth', '1612380600', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.10it/s]
+((11, 'ltc', '1612380600', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.88it/s]
+((1, 'btc', '1612380600', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.12it/s]
+((3, 'eth', '1612380600', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.19it/s]
+((11, 'ltc', '1612380600', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.01it/s]
+Train models for every coin with new data...
+Prepare data for lstm network - coin:btc
+Collect raw data...
+ 33%|█████████████████████████████████                                                                  | 1/3 [00:05<00:11,  5.66s/it]
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\test.py", line 61, in <module>
+    tnn()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\test.py", line 18, in tnn
+    activate_coins.activateCoins()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 25, in activateCoins
+    __trainNewModels__()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 95, in __trainNewModels__
+    trainer.startTraining(coin)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\mathematics\train_network.py", line 70, in startTraining
+    train_x, train_y, val_x, val_y, test_x, test_y = preprocessing.run()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\mathematics\preprocess_data.py", line 147, in run
+    rawData = self.__getRawData__()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\mathematics\preprocess_data.py", line 35, in __getRawData__
+    df.drop(["id"], 1, inplace=True)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\frame.py", line 4312, in drop
+    errors=errors,
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\generic.py", line 4152, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\generic.py", line 4188, in _drop_axis
+    result = self.reindex(**{axis_name: new_axis})
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\util\_decorators.py", line 312, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\frame.py", line 4173, in reindex
+    return super().reindex(**kwargs)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\generic.py", line 4809, in reindex
+    axes, level, limit, tolerance, method, fill_value, copy
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\frame.py", line 4014, in _reindex_axes
+    columns, method, copy, level, fill_value, limit, tolerance
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\frame.py", line 4062, in _reindex_columns
+    allow_dups=False,
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\generic.py", line 4880, in _reindex_with_indexers
+    copy=copy,
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\internals\managers.py", line 1308, in reindex_indexer
+    indexer, fill_value=fill_value, only_slice=only_slice
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\internals\managers.py", line 1437, in _slice_take_blocks_ax0
+    nb = blk.take_nd(taker, axis=0, new_mgr_locs=mgr_locs)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\internals\blocks.py", line 1386, in take_nd
+    values, indexer, axis=axis, allow_fill=allow_fill, fill_value=fill_value
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\pandas\core\algorithms.py", line 1759, in take_nd
+    func(arr, indexer, out, fill_value)
+KeyboardInterrupt
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m test
+2021-02-03 20:32:00.265497: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2021-02-03 20:32:00.265616: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+This process will need a lot of time!
+ca. 4h per coin in coins.conf
+Cancel if you dont have the time!
+Dont shutdown PC if you proceed!
+
+Download and save new coins...
+((1, 'btc', '1612380600', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.69it/s]
+((3, 'eth', '1612380600', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.93it/s]
+((11, 'ltc', '1612380600', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.02it/s]
+Update all coins...
+((1, 'btc', '1612380600', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.06it/s]
+((3, 'eth', '1612380600', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.13it/s]
+((11, 'ltc', '1612380600', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.09it/s]
+((1, 'btc', '1612380600', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.08it/s]
+((3, 'eth', '1612380600', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.11it/s]
+((11, 'ltc', '1612380600', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.05it/s]
+Train models for every coin with new data...
+Prepare data for lstm network - coin:btc
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  2.93s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:05<00:00,  2.68it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356288/356288 [00:38<00:00, 9168.97it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356229/356229 [00:00<00:00, 418601.26it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 47.76it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18752/18752 [00:02<00:00, 9315.46it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18693/18693 [00:00<00:00, 747738.54it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00, 10.03it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93472/93472 [00:10<00:00, 9232.72it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93413/93413 [00:00<00:00, 394147.70it/s]
+2021-02-03 20:33:23.165068: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2021-02-03 20:33:23.189305: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties:
+pciBusID: 0000:2d:00.0 name: GeForce GTX 960 computeCapability: 5.2
+coreClock: 1.2405GHz coreCount: 8 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 104.46GiB/s
+2021-02-03 20:33:23.190383: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2021-02-03 20:33:23.191181: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cublas64_10.dll'; dlerror: cublas64_10.dll not found
+2021-02-03 20:33:23.192347: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2021-02-03 20:33:23.193084: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2021-02-03 20:33:23.193779: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2021-02-03 20:33:23.194417: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cusparse64_10.dll'; dlerror: cusparse64_10.dll not found
+2021-02-03 20:33:23.195018: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudnn64_7.dll'; dlerror: cudnn64_7.dll not found
+2021-02-03 20:33:23.195084: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1598] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2021-02-03 20:33:23.195914: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2021-02-03 20:33:23.206021: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x256a34aa830 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-02-03 20:33:23.206219: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-02-03 20:33:23.207378: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-02-03 20:33:23.207500: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]
+2021-02-03 20:33:23.430083: I tensorflow/core/profiler/lib/profiler_session.cc:159] Profiler session started.
+2021-02-03 20:33:23.430217: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1363] Profiler found 1 GPUs
+2021-02-03 20:33:23.431418: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cupti64_101.dll'; dlerror: cupti64_101.dll not found
+2021-02-03 20:33:23.431502: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1408] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 20:33:23.431811: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1447] function cupti_interface_->ActivityRegisterCallbacks( AllocCuptiActivityBuffer, FreeCuptiActivityBuffer)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 20:33:23.432115: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1430] function cupti_interface_->EnableCallback( 0 , subscriber_, CUPTI_CB_DOMAIN_DRIVER_API, cbid)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 20:33:25.310612: I tensorflow/core/profiler/lib/profiler_session.cc:159] Profiler session started.
+2021-02-03 20:33:25.310722: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1408] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 20:33:25.311308: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1447] function cupti_interface_->ActivityRegisterCallbacks( AllocCuptiActivityBuffer, FreeCuptiActivityBuffer)failed with error CUPTI could not be loaded or symbol could not be found.
+   1/5110 [..............................] - ETA: 0s - loss: 1.2899 - mae: 0.8472 - mean_absolute_percentage_error: 563.42042021-02-03 20:33:25.421899: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1430] function cupti_interface_->EnableCallback( 0 , subscriber_, CUPTI_CB_DOMAIN_DRIVER_API, cbid)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 20:33:25.439261: I tensorflow/core/profiler/internal/gpu/device_tracer.cc:216]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-03 20:33:25.502750: I tensorflow/core/profiler/rpc/client/save_profile.cc:168] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612380727\train\plugins\profile\2021_02_03_19_33_25
+2021-02-03 20:33:25.543020: I tensorflow/core/profiler/rpc/client/save_profile.cc:174] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612380727\train\plugins\profile\2021_02_03_19_33_25\MAIN01-WINWS01.trace.json.gz
+2021-02-03 20:33:25.560777: I tensorflow/core/profiler/utils/event_span.cc:288] Generation of step-events took 0 ms
+
+2021-02-03 20:33:25.570279: I tensorflow/python/profiler/internal/profiler_wrapper.cc:87] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612380727\train\plugins\profile\2021_02_03_19_33_25Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612380727\train\plugins\profile\2021_02_03_19_33_25\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612380727\train\plugins\profile\2021_02_03_19_33_25\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612380727\train\plugins\profile\2021_02_03_19_33_25\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612380727\train\plugins\profile\2021_02_03_19_33_25\MAIN01-WINWS01.kernel_stats.pb
+
+5110/5110 [==============================] - ETA: 0s - loss: 0.0290 - mae: 0.0833 - mean_absolute_percentage_error: 249.30442021-02-03 20:41:34.844719: W tensorflow/python/util/util.cc:329] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+WARNING:tensorflow:From C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py:1817: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+5110/5110 [==============================] - 491s 96ms/step - loss: 0.0290 - mae: 0.0833 - mean_absolute_percentage_error: 249.3044 - val_loss: 0.0201 - val_mae: 0.1263 - val_mean_absolute_percentage_error: 26901.4883
+2380/2380 [==============================] - 49s 20ms/step - loss: 0.0023 - mae: 0.0368 - mean_absolute_percentage_error: 944.6216
+Test loss: 0.002281396882608533
+Test mse: 0.036843590438365936
+Done... Restart app!
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m test
+2021-02-03 21:03:42.506963: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-03 21:03:42.507075: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+This process will need a lot of time!
+ca. 4h per coin in coins.conf
+Cancel if you dont have the time!
+Dont shutdown PC if you proceed!
+
+Download and save new coins...
+((1, 'btc', '1612380600', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.42it/s]
+Writing missing values of coin btc into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 6/6 [00:00<00:00, 1499.66it/s]
+((3, 'eth', '1612380600', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.62it/s]
+Writing missing values of coin eth into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 6/6 [00:00<00:00, 2000.94it/s]
+((11, 'ltc', '1612380600', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.67it/s]
+Writing missing values of coin ltc into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 6/6 [00:00<00:00, 3000.22it/s]
+Update all coins...
+((1, 'btc', '1612382400', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.20it/s]
+((3, 'eth', '1612382400', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.15it/s]
+((11, 'ltc', '1612382400', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.15it/s]
+((1, 'btc', '1612382400', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.14it/s]
+((3, 'eth', '1612382400', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.05it/s]
+((11, 'ltc', '1612382400', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.11it/s]
+Train models for every coin with new data...
+Prepare data for lstm network - coin:btc
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  2.89s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:05<00:00,  2.68it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356293/356293 [00:38<00:00, 9262.30it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356234/356234 [00:00<00:00, 419592.47it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 48.63it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18752/18752 [00:01<00:00, 9399.50it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18693/18693 [00:00<00:00, 718941.13it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00, 10.04it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93689/93689 [00:10<00:00, 9323.21it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93630/93630 [00:00<00:00, 400126.22it/s]
+2021-02-03 21:05:09.860823: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-03 21:05:09.862332: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library nvcuda.dll
+2021-02-03 21:05:09.886956: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties:
+pciBusID: 0000:2d:00.0 name: GeForce GTX 960 computeCapability: 5.2
+coreClock: 1.2405GHz coreCount: 8 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 104.46GiB/s
+2021-02-03 21:05:09.887857: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-03 21:05:09.888710: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2021-02-03 21:05:09.889338: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2021-02-03 21:05:09.889969: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2021-02-03 21:05:09.890628: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2021-02-03 21:05:09.891534: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2021-02-03 21:05:09.892193: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2021-02-03 21:05:09.892905: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2021-02-03 21:05:09.892974: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1757] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2021-02-03 21:05:09.893597: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-02-03 21:05:09.895827: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-02-03 21:05:09.895904: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]
+2021-02-03 21:05:09.896173: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-03 21:05:10.049004: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-03 21:05:10.049111: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-03 21:05:10.049756: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1365] Profiler found 1 GPUs
+2021-02-03 21:05:10.051115: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti64_110.dll'; dlerror: cupti64_110.dll not found
+2021-02-03 21:05:10.051806: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti.dll'; dlerror: cupti.dll not found
+2021-02-03 21:05:10.051912: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 21:05:10.052195: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-03 21:05:10.052444: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 21:05:10.374558: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+Epoch 1/5
+   1/5233 [..............................] - ETA: 2:10:42 - loss: 1.7819 - mae: 1.00842021-02-03 21:05:11.994803: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-03 21:05:11.994932: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-03 21:05:11.995582: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5233 [..............................] - ETA: 18:13 - loss: 1.7863 - mae: 0.9431  2021-02-03 21:05:12.102765: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-03 21:05:12.103327: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 21:05:12.134363: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-03 21:05:12.187540: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-03 21:05:12.263545: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12
+2021-02-03 21:05:12.311903: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12\MAIN01-WINWS01.trace.json.gz
+2021-02-03 21:05:12.341534: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12
+2021-02-03 21:05:12.342936: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-03 21:05:12.350296: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612382634\train\plugins\profile\2021_02_03_20_05_12\MAIN01-WINWS01.kernel_stats.pb
+
+5233/5233 [==============================] - 529s 101ms/step - loss: 0.0872 - mae: 0.1524 - val_loss: 0.0222 - val_mae: 0.1445
+2021-02-03 21:14:00.318595: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+Epoch 2/5
+5233/5233 [==============================] - 584s 112ms/step - loss: 0.0033 - mae: 0.0417 - val_loss: 0.0055 - val_mae: 0.0668
+Epoch 3/5
+5233/5233 [==============================] - 654s 125ms/step - loss: 0.0023 - mae: 0.0347 - val_loss: 0.0102 - val_mae: 0.0947
+Epoch 4/5
+5233/5233 [==============================] - 692s 132ms/step - loss: 0.0019 - mae: 0.0317 - val_loss: 0.0177 - val_mae: 0.1291
+Epoch 5/5
+5233/5233 [==============================] - 765s 146ms/step - loss: 0.0016 - mae: 0.0285 - val_loss: 0.0040 - val_mae: 0.0559
+2660/2660 [==============================] - 76s 29ms/step - loss: 0.0015 - mae: 0.0316
+Test loss: 0.001491408096626401
+Test mse: 0.03155827894806862
+Done... Restart app!
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m test
+2021-02-03 22:25:08.083746: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-03 22:25:08.083927: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+This process will need a lot of time!
+ca. 4h per coin in coins.conf
+Cancel if you dont have the time!
+Dont shutdown PC if you proceed!
+
+Download and save new coins...
+((1, 'btc', '1612382400', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.02s/it]
+Writing missing values of coin btc into database...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 17/17 [00:00<00:00, 5665.73it/s]
+((3, 'eth', '1612382400', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.02it/s]
+Writing missing values of coin eth into database...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 17/17 [00:00<00:00, 5670.23it/s]
+((11, 'ltc', '1612382400', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.77it/s]
+Writing missing values of coin ltc into database...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 17/17 [00:00<00:00, 4249.55it/s]
+Update all coins...
+((1, 'btc', '1612387500', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.37it/s]
+((3, 'eth', '1612387500', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.16it/s]
+((11, 'ltc', '1612387500', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.24it/s]
+((1, 'btc', '1612387500', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.53it/s]
+((3, 'eth', '1612387500', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.38it/s]
+((11, 'ltc', '1612387500', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.34it/s]
+Train models for every coin with new data...
+Prepare data for lstm network - coin:btc
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  2.88s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:05<00:00,  2.71it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356307/356307 [00:38<00:00, 9312.29it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356248/356248 [00:00<00:00, 419610.97it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 47.48it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18752/18752 [00:01<00:00, 9390.11it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18693/18693 [00:00<00:00, 718888.39it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00, 10.03it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93692/93692 [00:10<00:00, 9275.52it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93633/93633 [00:00<00:00, 396753.50it/s]
+2021-02-03 22:26:30.544388: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-03 22:26:30.545687: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library nvcuda.dll
+2021-02-03 22:26:30.570523: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties:
+pciBusID: 0000:2d:00.0 name: GeForce GTX 960 computeCapability: 5.2
+coreClock: 1.2405GHz coreCount: 8 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 104.46GiB/s
+2021-02-03 22:26:30.571414: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-03 22:26:30.572219: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2021-02-03 22:26:30.572877: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2021-02-03 22:26:30.573719: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2021-02-03 22:26:30.574636: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2021-02-03 22:26:30.575277: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2021-02-03 22:26:30.576833: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2021-02-03 22:26:30.577445: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2021-02-03 22:26:30.577504: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1757] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2021-02-03 22:26:30.578029: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-02-03 22:26:30.579316: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-02-03 22:26:30.579381: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]
+2021-02-03 22:26:30.579649: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-03 22:26:30.789057: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-03 22:26:30.789259: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-03 22:26:30.790097: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1365] Profiler found 1 GPUs
+2021-02-03 22:26:30.791512: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti64_110.dll'; dlerror: cupti64_110.dll not found
+2021-02-03 22:26:30.792210: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti.dll'; dlerror: cupti.dll not found
+2021-02-03 22:26:30.792317: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 22:26:30.792619: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-03 22:26:30.792987: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 22:26:31.148220: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+Epoch 1/2
+   1/5233 [..............................] - ETA: 3:18:54 - loss: 2.2161 - mae: 1.13752021-02-03 22:26:33.524947: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-03 22:26:33.525103: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-03 22:26:33.525893: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5233 [..............................] - ETA: 23:21 - loss: 1.9906 - mae: 1.0713  2021-02-03 22:26:33.717946: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-03 22:26:33.718996: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 22:26:33.768218: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-03 22:26:33.855633: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-03 22:26:33.970157: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33
+2021-02-03 22:26:34.043680: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33\MAIN01-WINWS01.trace.json.gz
+2021-02-03 22:26:34.084799: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33
+2021-02-03 22:26:34.086683: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-03 22:26:34.096532: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387515\train\plugins\profile\2021_02_03_21_26_33\MAIN01-WINWS01.kernel_stats.pb
+
+1189/5233 [=====>........................] - ETA: 13:58 - loss: 0.4189 - mae: 0.3791Traceback (most recent call last):
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\test.py", line 61, in <module>
+    tnn()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\test.py", line 18, in tnn
+    activate_coins.activateCoins()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 25, in activateCoins
+    __trainNewModels__()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 95, in __trainNewModels__
+    trainer.startTraining(coin)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\mathematics\train_network.py", line 72, in startTraining
+    self.__trainModel__(coin, train_x, train_y, val_x, val_y, test_x, test_y)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\mathematics\train_network.py", line 60, in __trainModel__
+    verbose=1,
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1100, in fit
+    tmp_logs = self.train_function(iterator)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\def_function.py", line 828, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\def_function.py", line 855, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\function.py", line 2943, in __call__
+    filtered_flat_args, captured_inputs=graph_function.captured_inputs)  # pylint: disable=protected-access
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\function.py", line 1919, in _call_flat
+    ctx, args, cancellation_manager=cancellation_manager))
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\function.py", line 560, in call
+    ctx=ctx)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\execute.py", line 60, in quick_execute
+    inputs, attrs, num_outputs)
+KeyboardInterrupt
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m test
+2021-02-03 22:31:27.137714: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-03 22:31:27.137839: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+This process will need a lot of time!
+ca. 4h per coin in coins.conf
+Cancel if you dont have the time!
+Dont shutdown PC if you proceed!
+
+Download and save new coins...
+((1, 'btc', '1612387500', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.08s/it]
+Writing missing values of coin btc into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 1000.31it/s]
+((3, 'eth', '1612387500', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.85it/s]
+Writing missing values of coin eth into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 1003.66it/s]
+((11, 'ltc', '1612387500', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.70it/s]
+Writing missing values of coin ltc into database...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 499.80it/s]
+Update all coins...
+((1, 'btc', '1612387800', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.35it/s]
+((3, 'eth', '1612387800', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.24it/s]
+((11, 'ltc', '1612387800', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.38it/s]
+((1, 'btc', '1612387800', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.33it/s]
+((3, 'eth', '1612387800', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.37it/s]
+((11, 'ltc', '1612387800', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.21it/s]
+Train models for every coin with new data...
+Prepare data for lstm network - coin:btc
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  2.91s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:05<00:00,  2.70it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356307/356307 [00:38<00:00, 9172.22it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356248/356248 [00:00<00:00, 411847.51it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 43.36it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18753/18753 [00:02<00:00, 9348.44it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18694/18694 [00:00<00:00, 719025.74it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00,  9.77it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93692/93692 [00:10<00:00, 9199.48it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93633/93633 [00:00<00:00, 391769.74it/s]
+2021-02-03 22:32:51.380054: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-03 22:32:51.381184: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library nvcuda.dll
+2021-02-03 22:32:51.400629: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties:
+pciBusID: 0000:2d:00.0 name: GeForce GTX 960 computeCapability: 5.2
+coreClock: 1.2405GHz coreCount: 8 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 104.46GiB/s
+2021-02-03 22:32:51.401338: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-03 22:32:51.401932: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2021-02-03 22:32:51.402492: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2021-02-03 22:32:51.403050: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2021-02-03 22:32:51.403625: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2021-02-03 22:32:51.404161: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2021-02-03 22:32:51.404714: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2021-02-03 22:32:51.405259: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2021-02-03 22:32:51.405459: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1757] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2021-02-03 22:32:51.406133: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-02-03 22:32:51.407122: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-02-03 22:32:51.407204: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]
+2021-02-03 22:32:51.407475: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-03 22:32:51.531905: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-03 22:32:51.532008: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-03 22:32:51.532796: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1365] Profiler found 1 GPUs
+2021-02-03 22:32:51.533578: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti64_110.dll'; dlerror: cupti64_110.dll not found
+2021-02-03 22:32:51.534185: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti.dll'; dlerror: cupti.dll not found
+2021-02-03 22:32:51.534268: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 22:32:51.534337: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-03 22:32:51.534388: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 22:32:51.868356: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+Epoch 1/2
+   1/5233 [..............................] - ETA: 2:31:12 - loss: 1.2295 - mae: 0.84372021-02-03 22:32:53.727493: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-03 22:32:53.727590: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-03 22:32:53.727944: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5233 [..............................] - ETA: 18:02 - loss: 1.2111 - mae: 0.8403  2021-02-03 22:32:53.835541: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-03 22:32:53.836048: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 22:32:53.867017: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-03 22:32:53.922378: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-03 22:32:53.997802: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53
+2021-02-03 22:32:54.047261: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53\MAIN01-WINWS01.trace.json.gz
+2021-02-03 22:32:54.074495: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53
+2021-02-03 22:32:54.076070: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-03 22:32:54.084373: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612387895\train\plugins\profile\2021_02_03_21_32_53\MAIN01-WINWS01.kernel_stats.pb
+
+5233/5233 [==============================] - 524s 100ms/step - loss: 0.0723 - mae: 0.1339 - val_loss: 0.0026 - val_mae: 0.0415
+2021-02-03 22:41:36.626521: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+Epoch 2/2
+4752/5233 [==========================>...] - ETA: 47s - loss: 0.0022 - mae: 0.0339Traceback (most recent call last):
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\test.py", line 61, in <module>
+    tnn()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\test.py", line 18, in tnn
+    activate_coins.activateCoins()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 25, in activateCoins
+    __trainNewModels__()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 95, in __trainNewModels__
+    trainer.startTraining(coin)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\mathematics\train_network.py", line 72, in startTraining
+    self.__trainModel__(coin, train_x, train_y, val_x, val_y, test_x, test_y)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\mathematics\train_network.py", line 60, in __trainModel__
+    verbose=1,
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1100, in fit
+    tmp_logs = self.train_function(iterator)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\def_function.py", line 828, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\def_function.py", line 855, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\function.py", line 2943, in __call__
+    filtered_flat_args, captured_inputs=graph_function.captured_inputs)  # pylint: disable=protected-access
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\function.py", line 1919, in _call_flat
+    ctx, args, cancellation_manager=cancellation_manager))
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\function.py", line 560, in call
+    ctx=ctx)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\execute.py", line 60, in quick_execute
+    inputs, attrs, num_outputs)
+KeyboardInterrupt
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> ^C
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m test
+2021-02-03 22:49:42.083734: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-03 22:49:42.083825: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+This process will need a lot of time!
+ca. 4h per coin in coins.conf
+Cancel if you dont have the time!
+Dont shutdown PC if you proceed!
+
+Download and save new coins...
+((1, 'btc', '1612387800', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.40it/s]
+Writing missing values of coin btc into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 2000.38it/s]
+((3, 'eth', '1612387800', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.56it/s]
+Writing missing values of coin eth into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 1999.43it/s]
+((11, 'ltc', '1612387800', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.68it/s]
+Writing missing values of coin ltc into database...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00, 3994.58it/s]
+Update all coins...
+((1, 'btc', '1612389000', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.19it/s]
+((3, 'eth', '1612389000', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.34it/s]
+((11, 'ltc', '1612389000', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.35it/s]
+((1, 'btc', '1612389000', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.48it/s]
+((3, 'eth', '1612389000', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.36it/s]
+((11, 'ltc', '1612389000', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.35it/s]
+Train models for every coin with new data...
+Prepare data for lstm network - coin:btc
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  2.92s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:06<00:00,  2.66it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356310/356310 [00:38<00:00, 9161.95it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356251/356251 [00:00<00:00, 421599.99it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 49.23it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18753/18753 [00:02<00:00, 9265.31it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18694/18694 [00:00<00:00, 719005.96it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00, 10.03it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93693/93693 [00:10<00:00, 9197.31it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93634/93634 [00:00<00:00, 401863.83it/s]
+2021-02-03 22:51:58.306570: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-03 22:51:58.307952: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library nvcuda.dll
+2021-02-03 22:51:58.331031: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties:
+pciBusID: 0000:2d:00.0 name: GeForce GTX 960 computeCapability: 5.2
+coreClock: 1.2405GHz coreCount: 8 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 104.46GiB/s
+2021-02-03 22:51:58.331721: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-03 22:51:58.332291: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2021-02-03 22:51:58.333035: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2021-02-03 22:51:58.333569: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2021-02-03 22:51:58.334306: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2021-02-03 22:51:58.334855: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2021-02-03 22:51:58.335448: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2021-02-03 22:51:58.336061: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2021-02-03 22:51:58.336113: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1757] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2021-02-03 22:51:58.336374: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-02-03 22:51:58.337411: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-02-03 22:51:58.337464: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]
+2021-02-03 22:51:58.337513: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-03 22:51:58.458240: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-03 22:51:58.458357: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-03 22:51:58.458674: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1365] Profiler found 1 GPUs
+2021-02-03 22:51:58.459442: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti64_110.dll'; dlerror: cupti64_110.dll not found
+2021-02-03 22:51:58.460024: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti.dll'; dlerror: cupti.dll not found
+2021-02-03 22:51:58.460111: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 22:51:58.460198: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-03 22:51:58.460284: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 22:51:58.757075: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+Epoch 1/10
+   1/5233 [..............................] - ETA: 2:15:40 - loss: 1.9088 - mae: 1.07732021-02-03 22:52:00.435968: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-03 22:52:00.436070: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-03 22:52:00.436412: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5233 [..............................] - ETA: 18:23 - loss: 1.7029 - mae: 1.0201  2021-02-03 22:52:00.544494: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-03 22:52:00.544965: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-03 22:52:00.576010: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-03 22:52:00.637969: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-03 22:52:00.713702: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00
+2021-02-03 22:52:00.762687: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00\MAIN01-WINWS01.trace.json.gz
+2021-02-03 22:52:00.790482: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00
+2021-02-03 22:52:00.792199: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-03 22:52:00.799926: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612389042\train\plugins\profile\2021_02_03_21_52_00\MAIN01-WINWS01.kernel_stats.pb
+
+5233/5233 [==============================] - 494s 94ms/step - loss: 0.0783 - mae: 0.1388 - val_loss: 0.0110 - val_mae: 0.0963
+2021-02-03 23:00:13.743878: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+Epoch 2/10
+5233/5233 [==============================] - 559s 107ms/step - loss: 0.0026 - mae: 0.0373 - val_loss: 0.0067 - val_mae: 0.0743
+Epoch 3/10
+5233/5233 [==============================] - 555s 106ms/step - loss: 0.0020 - mae: 0.0320 - val_loss: 0.0345 - val_mae: 0.1815
+Epoch 4/10
+5233/5233 [==============================] - 650s 124ms/step - loss: 0.0017 - mae: 0.0294 - val_loss: 0.0370 - val_mae: 0.1863
+Epoch 5/10
+5233/5233 [==============================] - 675s 129ms/step - loss: 0.0015 - mae: 0.0272 - val_loss: 0.1384 - val_mae: 0.3534
+Epoch 6/10
+5233/5233 [==============================] - 639s 122ms/step - loss: 0.0013 - mae: 0.0258 - val_loss: 0.0349 - val_mae: 0.1712
+Epoch 7/10
+5233/5233 [==============================] - 708s 135ms/step - loss: 0.0025 - mae: 0.0363 - val_loss: 0.0474 - val_mae: 0.2065
+Epoch 8/10
+5233/5233 [==============================] - 752s 144ms/step - loss: 0.0014 - mae: 0.0267 - val_loss: nan - val_mae: nan
+Epoch 9/10
+ 353/5233 [=>............................] - ETA: 12:30 - loss: 0.0012 - mae: 0.0253Traceback (most recent call last):
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\test.py", line 61, in <module>
+    tnn()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\test.py", line 18, in tnn
+    activate_coins.activateCoins()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 25, in activateCoins
+
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 95, in __trainNewModels__
+    __saveModel__(coin, future_periods[i])
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\mathematics\train_network.py", line 72, in startTraining
+    self.__trainModel__(coin, train_x, train_y, val_x, val_y, test_x, test_y)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\mathematics\train_network.py", line 60, in __trainModel__
+    verbose=1,
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1100, in fit
+    tmp_logs = self.train_function(iterator)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\def_function.py", line 828, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\def_function.py", line 855, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\function.py", line 2943, in __call__
+    filtered_flat_args, captured_inputs=graph_function.captured_inputs)  # pylint: disable=protected-access
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\function.py", line 1919, in _call_flat
+    ctx, args, cancellation_manager=cancellation_manager))
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\function.py", line 560, in call
+    ctx=ctx)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\tensorflow\python\eager\execute.py", line 60, in quick_execute
+    inputs, attrs, num_outputs)
+KeyboardInterrupt
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m test
+2021-02-04 00:24:24.649574: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-04 00:24:24.649700: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+This process will need a lot of time!
+ca. 4h per coin in coins.conf
+Cancel if you dont have the time!
+Dont shutdown PC if you proceed!
+
+Waiting for DB to come online...
+Download and save new coins...
+((1, 'btc', '1612389000', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.67it/s]
+((3, 'eth', '1612389000', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.85it/s]
+((11, 'ltc', '1612389000', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.95it/s]
+Update all coins...
+((1, 'btc', '1612389000', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.44it/s]
+((3, 'eth', '1612389000', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.29it/s]
+((11, 'ltc', '1612389000', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.38it/s]
+((1, 'btc', '1612389000', 'yes'),)
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.32it/s]
+((3, 'eth', '1612389000', 'yes'),)
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.36it/s]
+((11, 'ltc', '1612389000', 'yes'),)
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.30it/s]
+Train models for every coin with new data...
+Prepare data for lstm network - coin:btc
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  2.95s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:05<00:00,  2.67it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356310/356310 [00:39<00:00, 9083.05it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356251/356251 [00:00<00:00, 400281.44it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 47.76it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18753/18753 [00:01<00:00, 9395.28it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18694/18694 [00:00<00:00, 718946.63it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00,  9.41it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93693/93693 [00:10<00:00, 9354.33it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93634/93634 [00:00<00:00, 362930.34it/s]
+2021-02-04 00:26:42.251719: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-04 00:26:42.253293: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library nvcuda.dll
+2021-02-04 00:26:42.274035: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties:
+pciBusID: 0000:2d:00.0 name: GeForce GTX 960 computeCapability: 5.2
+coreClock: 1.2405GHz coreCount: 8 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 104.46GiB/s
+2021-02-04 00:26:42.275085: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-04 00:26:42.275920: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2021-02-04 00:26:42.276963: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2021-02-04 00:26:42.278000: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2021-02-04 00:26:42.278865: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2021-02-04 00:26:42.279606: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2021-02-04 00:26:42.280625: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2021-02-04 00:26:42.281611: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2021-02-04 00:26:42.281661: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1757] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2021-02-04 00:26:42.281959: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-02-04 00:26:42.282983: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-02-04 00:26:42.283056: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]
+2021-02-04 00:26:42.283126: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-04 00:26:42.403879: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 00:26:42.404024: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 00:26:42.404129: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1365] Profiler found 1 GPUs
+2021-02-04 00:26:42.405326: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti64_110.dll'; dlerror: cupti64_110.dll not found
+2021-02-04 00:26:42.406161: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti.dll'; dlerror: cupti.dll not found
+2021-02-04 00:26:42.406262: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 00:26:42.406311: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 00:26:42.406351: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 00:26:42.732855: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+Epoch 1/5
+   1/5233 [..............................] - ETA: 2:35:18 - loss: 1.0842 - mae: 0.80252021-02-04 00:26:44.639555: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 00:26:44.639646: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 00:26:44.639781: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5233 [..............................] - ETA: 18:13 - loss: 1.0581 - mae: 0.7897  2021-02-04 00:26:44.746418: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-04 00:26:44.746879: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 00:26:44.779556: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-04 00:26:44.835902: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 00:26:44.909758: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44
+2021-02-04 00:26:44.958861: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44\MAIN01-WINWS01.trace.json.gz
+2021-02-04 00:26:44.986346: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44
+2021-02-04 00:26:44.987916: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-04 00:26:44.996267: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612394726\train\plugins\profile\2021_02_03_23_26_44\MAIN01-WINWS01.kernel_stats.pb
+
+5233/5233 [==============================] - 580s 111ms/step - loss: 0.0812 - mae: 0.1347 - val_loss: 0.0204 - val_mae: 0.1227
+2021-02-04 00:36:23.752060: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+Epoch 2/5
+5233/5233 [==============================] - 564s 108ms/step - loss: 0.0032 - mae: 0.0409 - val_loss: 0.0131 - val_mae: 0.1038
+Epoch 3/5
+5233/5233 [==============================] - 669s 128ms/step - loss: 0.0026 - mae: 0.0368 - val_loss: 0.0120 - val_mae: 0.1037
+Epoch 4/5
+5233/5233 [==============================] - 715s 137ms/step - loss: 0.0019 - mae: 0.0316 - val_loss: 0.0053 - val_mae: 0.0661
+Epoch 5/5
+5233/5233 [==============================] - 718s 137ms/step - loss: 0.0015 - mae: 0.0276 - val_loss: 0.0020 - val_mae: 0.0356
+2659/2659 [==============================] - 71s 27ms/step - loss: 4.1931e-04 - mae: 0.0150
+Test loss: 0.00041930758743546903
+Test mse: 0.015028763562440872
+Prepare data for lstm network - coin:eth
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:09<00:00,  3.10s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:06<00:00,  2.66it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356310/356310 [00:38<00:00, 9165.06it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356251/356251 [00:01<00:00, 343209.49it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 43.48it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18753/18753 [00:02<00:00, 9265.32it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18694/18694 [00:00<00:00, 747835.60it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00,  8.03it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93693/93693 [00:10<00:00, 9189.19it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93634/93634 [00:00<00:00, 373046.06it/s]
+2021-02-04 01:23:30.873076: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 01:23:30.873293: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 01:23:30.873714: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 01:23:30.873773: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 01:23:30.873818: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+Epoch 1/5
+   1/5565 [..............................] - ETA: 2:25:18 - loss: 1.0542 - mae: 0.79662021-02-04 01:23:32.858143: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 01:23:32.858260: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 01:23:32.858606: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5565 [..............................] - ETA: 15:29 - loss: 0.9768 - mae: 0.7592  2021-02-04 01:23:33.108836: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-04 01:23:33.109731: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 01:23:33.141753: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-04 01:23:33.197360: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 01:23:33.270796: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33
+2021-02-04 01:23:33.320222: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33\MAIN01-WINWS01.trace.json.gz
+2021-02-04 01:23:33.346255: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33
+2021-02-04 01:23:33.347772: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-04 01:23:33.355601: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612398133\train\plugins\profile\2021_02_04_00_23_33\MAIN01-WINWS01.kernel_stats.pb
+
+5565/5565 [==============================] - 698s 125ms/step - loss: 0.0468 - mae: 0.0998 - val_loss: 0.0029 - val_mae: 0.0351
+Epoch 2/5
+5565/5565 [==============================] - 861s 155ms/step - loss: 0.0014 - mae: 0.0236 - val_loss: 0.0038 - val_mae: 0.0478
+Epoch 3/5
+5565/5565 [==============================] - 941s 169ms/step - loss: 0.0011 - mae: 0.0212 - val_loss: 0.0088 - val_mae: 0.0735
+Epoch 4/5
+5565/5565 [==============================] - 864s 155ms/step - loss: 0.0010 - mae: 0.0203 - val_loss: 0.0019 - val_mae: 0.0357
+Epoch 5/5
+5565/5565 [==============================] - 841s 151ms/step - loss: 9.9092e-04 - mae: 0.0198 - val_loss: 0.0059 - val_mae: 0.0665
+758/758 [==============================] - 19s 26ms/step - loss: 0.0012 - mae: 0.0216
+Test loss: 0.0012018809793516994
+Test mse: 0.021644040942192078
+Prepare data for lstm network - coin:ltc
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:09<00:00,  3.05s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:05<00:00,  2.67it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356310/356310 [00:38<00:00, 9141.30it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356251/356251 [00:01<00:00, 336720.84it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 47.91it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18753/18753 [00:02<00:00, 9233.38it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18694/18694 [00:00<00:00, 718959.81it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00,  9.71it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93693/93693 [00:10<00:00, 9207.25it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93634/93634 [00:00<00:00, 385327.70it/s]
+2021-02-04 02:35:25.993933: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 02:35:25.994076: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 02:35:25.994189: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 02:35:25.994258: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 02:35:25.994308: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+Epoch 1/5
+   1/5262 [..............................] - ETA: 2:17:24 - loss: 3.7255 - mae: 0.97952021-02-04 02:35:28.043727: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 02:35:28.043823: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 02:35:28.044334: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5262 [..............................] - ETA: 17:21 - loss: 3.2558 - mae: 0.9441  2021-02-04 02:35:28.322334: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-04 02:35:28.323138: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 02:35:28.353828: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-04 02:35:28.408047: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 02:35:28.480720: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28
+2021-02-04 02:35:28.530527: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28\MAIN01-WINWS01.trace.json.gz
+2021-02-04 02:35:28.556001: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28
+2021-02-04 02:35:28.557526: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-04 02:35:28.565885: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-72-pred-1612402448\train\plugins\profile\2021_02_04_01_35_28\MAIN01-WINWS01.kernel_stats.pb
+
+5262/5262 [==============================] - 696s 132ms/step - loss: 0.1076 - mae: 0.1458 - val_loss: 0.0050 - val_mae: 0.0558
+Epoch 2/5
+5262/5262 [==============================] - 746s 142ms/step - loss: 0.0023 - mae: 0.0310 - val_loss: 0.0097 - val_mae: 0.0821
+Epoch 3/5
+5262/5262 [==============================] - 769s 146ms/step - loss: 0.0017 - mae: 0.0274 - val_loss: 0.0028 - val_mae: 0.0403
+Epoch 4/5
+5262/5262 [==============================] - 781s 148ms/step - loss: 0.0013 - mae: 0.0244 - val_loss: 0.0094 - val_mae: 0.0730
+Epoch 5/5
+5262/5262 [==============================] - 780s 148ms/step - loss: 0.0011 - mae: 0.0217 - val_loss: 0.0068 - val_mae: 0.0667
+2814/2814 [==============================] - 82s 29ms/step - loss: 0.0017 - mae: 0.0220
+Test loss: 0.0017264005728065968
+Test mse: 0.022016357630491257
+Done... Restart app!
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m test
+== CPython 3.7.5 (tags/v3.7.5:5c02a39a0b, Oct 15 2019, 00:11:34) [MSC v.1916 64 bit (AMD64)]
+== Windows-10-10.0.21301-SP0 little-endian
+== cwd: C:\Users\BIRKLE~1.SEP\AppData\Local\Temp\test_python_2316
+== CPU count: 24
+== encodings: locale=cp1252, FS=utf-8
+Run tests sequentially
+0:00:00 load avg: 0.00 [  1/416] test_grammar
+0:00:00 load avg: 0.00 [  2/416] test_opcodes
+0:00:00 load avg: 0.00 [  3/416] test_dict
+0:00:00 load avg: 0.00 [  4/416] test_builtin
+0:00:00 load avg: 0.00 [  5/416] test_exceptions
+0:00:01 load avg: 0.00 [  6/416] test_types
+0:00:01 load avg: 0.00 [  7/416] test_unittest
+0:00:02 load avg: 0.00 [  8/416] test_doctest
+0:00:03 load avg: 0.00 [  9/416] test_doctest2
+0:00:03 load avg: 0.00 [ 10/416] test_support
+0:00:07 load avg: 0.00 [ 11/416] test___all__
+Warning -- warnings.filters was modified by test___all__
+  Before: (2088573411016, [('default', None, <class 'DeprecationWarning'>, '__main__', 0), ('ignore', None, <class 'DeprecationWarning'>, None, 0), ('ignore', None, <class 'PendingDeprecationWarning'>, None, 0), ('ignore', None, <class 'ImportWarning'>, None, 0), ('ignore', None, <class 'ResourceWarning'>, None, 0)], [('default', None, <class 'DeprecationWarning'>, '__main__', 0), ('ignore', None, <class 'DeprecationWarning'>, None, 0), ('ignore', None, <class 'PendingDeprecationWarning'>, None, 0), ('ignore', None, <class 'ImportWarning'>, None, 0), ('ignore', None, <class 'ResourceWarning'>, None, 0)])
+  After:  (2088573411016, [('default', None, <class 'DeprecationWarning'>, '__main__', 0), ('ignore', None, <class 'DeprecationWarning'>, None, 0), ('ignore', None, <class 'PendingDeprecationWarning'>, None, 0), ('ignore', None, <class 'ImportWarning'>, None, 0), ('ignore', None, <class 'ResourceWarning'>, None, 0)], [('default', None, <class 'DeprecationWarning'>, '__main__', 0), ('ignore', None, <class 'DeprecationWarning'>, None, 0), ('ignore', None, <class 'PendingDeprecationWarning'>, None, 0), ('ignore', None, <class 'ImportWarning'>, None, 0), ('ignore', None, <class 'ResourceWarning'>, None, 0), ('ignore', None, <class 'pkg_resources.PEP440Warning'>, None, 0)])
+0:00:10 load avg: 0.00 [ 12/416/1] test___future__ -- test___all__ failed (env changed)
+0:00:10 load avg: 0.00 [ 13/416/1] test__locale
+test test__locale failed -- multiple errors occurred; run in verbose mode for details
+0:00:10 load avg: 0.00 [ 14/416/2] test__opcode -- test__locale failed
+0:00:10 load avg: 0.00 [ 15/416/2] test__osx_support
+0:00:10 load avg: 0.00 [ 16/416/2] test_abc
+0:00:10 load avg: 0.00 [ 17/416/2] test_abstract_numbers
+0:00:10 load avg: 0.00 [ 18/416/2] test_aifc
+0:00:11 load avg: 0.00 [ 19/416/2] test_argparse
+0:00:12 load avg: 0.00 [ 20/416/2] test_array
+0:00:13 load avg: 0.00 [ 21/416/2] test_asdl_parser
+test_asdl_parser skipped -- test irrelevant for an installed Python
+0:00:13 load avg: 0.00 [ 22/416/2] test_ast -- test_asdl_parser skipped
+0:00:14 load avg: 0.00 [ 23/416/2] test_asyncgen
+0:00:16 load avg: 0.00 [ 24/416/2] test_asynchat
+0:00:28 load avg: 0.00 [ 25/416/2] test_asyncio
+
+
+== Tests result: FAILURE, INTERRUPTED ==
+Test suite interrupted by signal SIGINT.
+
+392 tests omitted:
+    test_asyncio test_asyncore test_atexit test_audioop test_augassign
+    test_base64 test_baseexception test_bdb test_bigaddrspace
+    test_bigmem test_binascii test_binhex test_binop test_bisect
+    test_bool test_buffer test_bufio test_bytes test_bz2
+    test_c_locale_coercion test_calendar test_call test_capi test_cgi
+    test_cgitb test_charmapcodec test_class test_clinic test_cmath
+    test_cmd test_cmd_line test_cmd_line_script test_code
+    test_code_module test_codeccallbacks test_codecencodings_cn
+    test_codecencodings_hk test_codecencodings_iso2022
+    test_codecencodings_jp test_codecencodings_kr
+    test_codecencodings_tw test_codecmaps_cn test_codecmaps_hk
+    test_codecmaps_jp test_codecmaps_kr test_codecmaps_tw test_codecs
+    test_codeop test_collections test_colorsys test_compare
+    test_compile test_compileall test_complex test_concurrent_futures
+    test_configparser test_contains test_context test_contextlib
+    test_contextlib_async test_copy test_copyreg test_coroutines
+    test_cprofile test_crashers test_crypt test_csv test_ctypes
+    test_curses test_dataclasses test_datetime test_dbm test_dbm_dumb
+    test_dbm_gnu test_dbm_ndbm test_decimal test_decorators
+    test_defaultdict test_deque test_descr test_descrtut test_devpoll
+    test_dict_version test_dictcomps test_dictviews test_difflib
+    test_dis test_distutils test_docxmlrpc test_dtrace
+    test_dummy_thread test_dummy_threading test_dynamic
+    test_dynamicclassattribute test_eintr test_email test_embed
+    test_ensurepip test_enum test_enumerate test_eof test_epoll
+    test_errno test_exception_hierarchy test_exception_variations
+    test_extcall test_faulthandler test_fcntl test_file
+    test_file_eintr test_filecmp test_fileinput test_fileio
+    test_finalization test_float test_flufl test_fnmatch test_fork1
+    test_format test_fractions test_frame test_frozen test_fstring
+    test_ftplib test_funcattrs test_functools test_future test_future3
+    test_future4 test_future5 test_gc test_gdb test_generator_stop
+    test_generators test_genericclass test_genericpath test_genexps
+    test_getargs2 test_getopt test_getpass test_gettext test_glob
+    test_global test_grp test_gzip test_hash test_hashlib test_heapq
+    test_hmac test_html test_htmlparser test_http_cookiejar
+    test_http_cookies test_httplib test_httpservers test_idle
+    test_imaplib test_imghdr test_imp test_import test_importlib
+    test_index test_inspect test_int test_int_literal test_io
+    test_ioctl test_ipaddress test_isinstance test_iter test_iterlen
+    test_itertools test_json test_keyword test_keywordonlyarg
+    test_kqueue test_largefile test_lib2to3 test_linecache test_list
+    test_listcomps test_locale test_logging test_long test_longexp
+    test_lzma test_macpath test_mailbox test_mailcap test_marshal
+    test_math test_memoryio test_memoryview test_metaclass
+    test_mimetypes test_minidom test_mmap test_module
+    test_modulefinder test_msilib test_multibytecodec
+    test_multiprocessing_fork test_multiprocessing_forkserver
+    test_multiprocessing_main_handling test_multiprocessing_spawn
+    test_netrc test_nis test_nntplib test_normalization test_ntpath
+    test_numeric_tower test_openpty test_operator test_optparse
+    test_ordered_dict test_os test_ossaudiodev test_osx_env
+    test_parser test_pathlib test_pdb test_peepholer test_pickle
+    test_pickletools test_pipes test_pkg test_pkgimport test_pkgutil
+    test_platform test_plistlib test_poll test_popen test_poplib
+    test_posix test_posixpath test_pow test_pprint test_print
+    test_profile test_property test_pstats test_pty test_pulldom
+    test_pwd test_py_compile test_pyclbr test_pydoc test_pyexpat
+    test_queue test_quopri test_raise test_random test_range test_re
+    test_readline test_regrtest test_repl test_reprlib test_resource
+    test_richcmp test_rlcompleter test_robotparser test_runpy test_sax
+    test_sched test_scope test_script_helper test_secrets test_select
+    test_selectors test_set test_setcomps test_shelve test_shlex
+    test_shutil test_signal test_site test_slice test_smtpd
+    test_smtplib test_smtpnet test_sndhdr test_socket
+    test_socketserver test_sort test_source_encoding test_spwd
+    test_sqlite test_ssl test_startfile test_stat test_statistics
+    test_strftime test_string test_string_literals test_stringprep
+    test_strptime test_strtod test_struct test_structmembers
+    test_structseq test_subclassinit test_subprocess test_sunau
+    test_sundry test_super test_symbol test_symtable test_syntax
+    test_sys test_sys_setprofile test_sys_settrace test_sysconfig
+    test_syslog test_tarfile test_tcl test_telnetlib test_tempfile
+    test_textwrap test_thread test_threaded_import
+    test_threadedtempfile test_threading test_threading_local
+    test_threadsignals test_time test_timeit test_timeout test_tix
+    test_tk test_tokenize test_tools test_trace test_traceback
+    test_tracemalloc test_ttk_guionly test_ttk_textonly test_tuple
+    test_turtle test_typechecks test_typing test_ucn test_unary
+    test_unicode test_unicode_file test_unicode_file_functions
+    test_unicode_identifiers test_unicodedata test_univnewlines
+    test_unpack test_unpack_ex test_urllib test_urllib2
+    test_urllib2_localnet test_urllib2net test_urllib_response
+    test_urllibnet test_urlparse test_userdict test_userlist
+    test_userstring test_utf8_mode test_utf8source test_uu test_uuid
+    test_venv test_wait3 test_wait4 test_warnings test_wave
+    test_weakref test_weakset test_webbrowser test_winconsoleio
+    test_winreg test_winsound test_with test_wsgiref test_xdrlib
+    test_xml_dom_minicompat test_xml_etree test_xml_etree_c
+    test_xmlrpc test_xmlrpc_net test_xxtestfuzz test_yield_from
+    test_zipapp test_zipfile test_zipfile64 test_zipimport
+    test_zipimport_support test_zlib
+
+21 tests OK.
+
+1 test failed:
+    test__locale
+
+1 test altered the execution environment:
+    test___all__
+
+1 test skipped:
+    test_asdl_parser
+
+Total duration: 31 sec 548 ms
+Tests result: FAILURE, INTERRUPTED
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m dev_test
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\dev_test.py", line 1, in <module>
+    import activate_coins
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 87
+    existingCoins= databaseInteraction.getSavedCoins()
+    ^
+IndentationError: unexpected indent
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m dev_test
+2021-02-04 03:53:46.889370: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-04 03:53:46.889488: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+
+This process will need a lot of time!
+ca. 4h per coin in coins.conf
+Cancel if you dont have the time!
+Dont shutdown PC if you proceed!
+
+Waiting for DB to come online...
+Download and save new coins...
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\dev_test.py", line 47, in <module>
+    t_activate()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\dev_test.py", line 24, in t_activate
+    activate_coins.activateCoins()
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 28, in activateCoins
+    newCoins = __updateNewCoins__(True, db, databaseInteraction)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\activate_coins.py", line 120, in __updateNewCoins__
+    databaseInteraction.updateCoin(coin)
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\system_interaction\database_interaction.py", line 329, in updateCoin
+    missingValues = cb.getMissingCoinData(coin, i[2])
+  File "C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\system_interaction\coinbase_interaction.py", line 70, in getMissingCoinData
+    day = datetime.fromtimestamp(lastPresentVersion)
+TypeError: an integer is required (got type str)
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine> & "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/python.exe" -m dev_test
+2021-02-04 03:54:37.012971: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-04 03:54:37.013092: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+
+This process will need a lot of time!
+ca. 4h per coin in coins.conf
+Cancel if you dont have the time!
+Dont shutdown PC if you proceed!
+
+Download and save new coins...
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.40it/s]
+Writing missing values of coin btc into database...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 60/60 [00:00<00:00, 5997.72it/s]
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.97it/s]
+Writing missing values of coin eth into database...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 60/60 [00:00<00:00, 6666.62it/s]
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.95it/s]
+Writing missing values of coin ltc into database...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 60/60 [00:00<00:00, 6665.38it/s]
+Update all coins...
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.29it/s]
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.37it/s]
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.37it/s]
+Downloading missing values of coin btc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.32it/s]
+Downloading missing values of coin eth...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.33it/s]
+Downloading missing values of coin ltc...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.38it/s]
+Train models for every coin with new data...
+Prepare data for lstm network - coin:btc
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  2.95s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:05<00:00,  2.69it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356356/356356 [00:38<00:00, 9309.92it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356297/356297 [00:00<00:00, 420659.21it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 49.23it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18755/18755 [00:02<00:00, 9229.83it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18696/18696 [00:00<00:00, 719082.88it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00, 10.03it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93489/93489 [00:10<00:00, 9195.34it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93430/93430 [00:00<00:00, 400987.47it/s]
+2021-02-04 03:56:02.641838: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-04 03:56:02.643563: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library nvcuda.dll
+2021-02-04 03:56:02.664242: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties:
+pciBusID: 0000:2d:00.0 name: GeForce GTX 960 computeCapability: 5.2
+coreClock: 1.2405GHz coreCount: 8 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 104.46GiB/s
+2021-02-04 03:56:02.664981: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudart64_110.dll'; dlerror: cudart64_110.dll not found
+2021-02-04 03:56:02.665585: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublas64_11.dll'; dlerror: cublas64_11.dll not found
+2021-02-04 03:56:02.666155: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cublasLt64_11.dll'; dlerror: cublasLt64_11.dll not found
+2021-02-04 03:56:02.666680: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2021-02-04 03:56:02.667196: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2021-02-04 03:56:02.667716: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2021-02-04 03:56:02.668256: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cusparse64_11.dll'; dlerror: cusparse64_11.dll not found
+2021-02-04 03:56:02.668812: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2021-02-04 03:56:02.668853: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1757] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2021-02-04 03:56:02.669130: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-02-04 03:56:02.670158: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-02-04 03:56:02.670210: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]
+2021-02-04 03:56:02.670275: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-02-04 03:56:02.791425: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 03:56:02.791538: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 03:56:02.791896: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1365] Profiler found 1 GPUs
+2021-02-04 03:56:02.792672: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti64_110.dll'; dlerror: cupti64_110.dll not found
+2021-02-04 03:56:02.793235: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library 'cupti.dll'; dlerror: cupti.dll not found
+2021-02-04 03:56:02.793290: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 03:56:02.793336: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 03:56:02.793373: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 03:56:03.130923: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+Epoch 1/5
+   1/5111 [..............................] - ETA: 2:38:14 - loss: 1.9149 - mae: 0.96662021-02-04 03:56:05.118835: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 03:56:05.118930: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 03:56:05.119335: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5111 [..............................] - ETA: 17:52 - loss: 1.8894 - mae: 0.9868  2021-02-04 03:56:05.225141: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-04 03:56:05.225629: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 03:56:05.256836: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-04 03:56:05.312690: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 03:56:05.389004: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05
+2021-02-04 03:56:05.439739: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05\MAIN01-WINWS01.trace.json.gz
+2021-02-04 03:56:05.467254: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05
+2021-02-04 03:56:05.468751: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-04 03:56:05.483040: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612407287\train\plugins\profile\2021_02_04_02_56_05\MAIN01-WINWS01.kernel_stats.pb
+
+5111/5111 [==============================] - 513s 100ms/step - loss: 0.0658 - mae: 0.1233 - val_loss: 0.0094 - val_mae: 0.0857
+2021-02-04 04:04:36.714954: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+Epoch 2/5
+5111/5111 [==============================] - 553s 108ms/step - loss: 0.0019 - mae: 0.0305 - val_loss: 0.0222 - val_mae: 0.1341
+Epoch 3/5
+5111/5111 [==============================] - 635s 124ms/step - loss: 0.0017 - mae: 0.0291 - val_loss: 0.0127 - val_mae: 0.0916
+Epoch 4/5
+5111/5111 [==============================] - 718s 140ms/step - loss: 0.0016 - mae: 0.0283 - val_loss: 0.0106 - val_mae: 0.0726
+Epoch 5/5
+5111/5111 [==============================] - 747s 146ms/step - loss: 0.0016 - mae: 0.0277 - val_loss: 0.0137 - val_mae: 0.0933
+2379/2379 [==============================] - 60s 25ms/step - loss: 0.0020 - mae: 0.0321
+Test loss: 0.0020185387693345547
+Test mse: 0.03212708234786987
+Prepare data for lstm network - coin:eth
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:09<00:00,  3.09s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:06<00:00,  2.65it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356356/356356 [00:39<00:00, 9121.26it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356297/356297 [00:01<00:00, 318403.84it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 46.24it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18755/18755 [00:02<00:00, 9229.83it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18696/18696 [00:00<00:00, 719115.86it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00,  9.95it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93489/93489 [00:10<00:00, 8981.56it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93430/93430 [00:00<00:00, 382914.77it/s]
+2021-02-04 04:51:19.870194: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 04:51:19.870334: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 04:51:19.870818: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 04:51:19.870868: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 04:51:19.870941: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+Epoch 1/5
+   1/5518 [..............................] - ETA: 2:23:37 - loss: 0.9793 - mae: 0.70412021-02-04 04:51:21.811927: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 04:51:21.812031: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 04:51:21.812445: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5518 [..............................] - ETA: 17:39 - loss: 0.8985 - mae: 0.6869  2021-02-04 04:51:22.101263: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-04 04:51:22.102020: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 04:51:22.134641: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-04 04:51:22.187973: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 04:51:22.263117: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22
+2021-02-04 04:51:22.313423: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22\MAIN01-WINWS01.trace.json.gz
+2021-02-04 04:51:22.340801: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22
+2021-02-04 04:51:22.342375: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-04 04:51:22.350245: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612410602\train\plugins\profile\2021_02_04_03_51_22\MAIN01-WINWS01.kernel_stats.pb
+
+5518/5518 [==============================] - 751s 136ms/step - loss: 0.0490 - mae: 0.1063 - val_loss: 0.0261 - val_mae: 0.1347
+Epoch 2/5
+5518/5518 [==============================] - 870s 158ms/step - loss: 0.0016 - mae: 0.0252 - val_loss: 0.0130 - val_mae: 0.0888
+Epoch 3/5
+5518/5518 [==============================] - 911s 165ms/step - loss: 0.0018 - mae: 0.0266 - val_loss: 0.0070 - val_mae: 0.0569
+Epoch 4/5
+5518/5518 [==============================] - 951s 172ms/step - loss: 0.0013 - mae: 0.0232 - val_loss: 0.0088 - val_mae: 0.0628
+Epoch 5/5
+5518/5518 [==============================] - 964s 175ms/step - loss: 0.0042 - mae: 0.0383 - val_loss: nan - val_mae: nan
+469/469 [==============================] - 14s 31ms/step - loss: nan - mae: nan
+Test loss: nan
+Test mse: nan
+Prepare data for lstm network - coin:ltc
+Collect raw data...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:08<00:00,  2.98s/it]
+Preprocessing train data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:11<00:00,  1.41it/s]
+Generate sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 356356/356356 [00:39<00:00, 9120.26it/s]
+Balance sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████| 356297/356297 [00:01<00:00, 349654.05it/s]
+Preprocessing validation data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:00<00:00, 53.16it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 18755/18755 [00:01<00:00, 9391.60it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 18696/18696 [00:00<00:00, 719076.29it/s]
+Preprocessing test data...
+Scale data...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:01<00:00,  9.84it/s]
+Generate sequences...
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 93489/93489 [00:10<00:00, 9257.25it/s]
+Balance sequences...
+100%|███████████████████████████████████████████████████████████████████████████████████████| 93430/93430 [00:00<00:00, 381343.78it/s]
+2021-02-04 06:07:16.804634: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 06:07:16.804728: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 06:07:16.806192: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 06:07:16.806252: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 06:07:16.806296: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+Epoch 1/5
+   1/5390 [..............................] - ETA: 2:23:53 - loss: 2.0249 - mae: 0.98422021-02-04 06:07:18.766595: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2021-02-04 06:07:18.766694: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2021-02-04 06:07:18.766875: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+   2/5390 [..............................] - ETA: 16:42 - loss: 1.9083 - mae: 0.9419  2021-02-04 06:07:19.025967: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2021-02-04 06:07:19.026823: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1496] function cupti_interface_->Finalize()failed with error CUPTI could not be loaded or symbol could not be found.
+2021-02-04 06:07:19.059913: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2021-02-04 06:07:19.110516: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2021-02-04 06:07:19.183430: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19
+2021-02-04 06:07:19.232935: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19\MAIN01-WINWS01.trace.json.gz
+2021-02-04 06:07:19.257858: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19
+2021-02-04 06:07:19.259240: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19\MAIN01-WINWS01.memory_profile.json.gz
+2021-02-04 06:07:19.266726: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19Dumped tool data for xplane.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19\MAIN01-WINWS01.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19\MAIN01-WINWS01.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19\MAIN01-WINWS01.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19\MAIN01-WINWS01.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine\logs\60-seq-288-pred-1612415155\train\plugins\profile\2021_02_04_05_07_19\MAIN01-WINWS01.kernel_stats.pb
+
+5390/5390 [==============================] - 714s 132ms/step - loss: 0.0646 - mae: 0.1186 - val_loss: 0.0157 - val_mae: 0.1023
+Epoch 2/5
+5390/5390 [==============================] - 765s 142ms/step - loss: 0.0014 - mae: 0.0236 - val_loss: 0.0219 - val_mae: 0.1163
+Epoch 3/5
+5390/5390 [==============================] - 915s 170ms/step - loss: 0.0013 - mae: 0.0219 - val_loss: 0.0208 - val_mae: 0.1158
+Epoch 4/5
+5390/5390 [==============================] - 927s 172ms/step - loss: 0.0037 - mae: 0.0314 - val_loss: nan - val_mae: nan
+Epoch 5/5
+5390/5390 [==============================] - 932s 173ms/step - loss: 0.0215 - mae: 0.1059 - val_loss: nan - val_mae: nan
+2609/2609 [==============================] - 80s 31ms/step - loss: nan - mae: nan
+Test loss: nan
+Test mse: nan
+Done... Restart app!
+PS C:\Users\birkle.SEPHTECH\Documents\GitHub\moneymachine>
+
+
+
+Ergebnisse Test Daten:
+
+        btc_72                      btc_288                 eth_72                      eth_288 ltc_72                  ltc_288
+loss    0.00041930758743546903      0.0020185387693345547   0.0012018809793516994       nan     0.0017264005728065968   nan
+mse     0.015028763562440872        0.03212708234786987     0.021644040942192078        nan     0.022016357630491257    nan
+
+0.00041930758743546903
+Test mse: 0.015028763562440872
