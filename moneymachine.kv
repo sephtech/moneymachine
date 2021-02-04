@@ -20,25 +20,25 @@
                     padding: (self.height * 1,self.height *  0.2, self.height * 1,self.height *  0.2)
                     # spacing: self.height * 0.1
                     ToggleButton
-                        id: toggle_time_tag
+                        id: toggle_time_day
                         text: 'Tag'
                         group: 'time'
                         on_press: root.updateGraph()
                         size_hint: (0.2, 1)
                     ToggleButton
-                        id: toggle_time_woche
+                        id: toggle_time_week
                         text: 'Woche'
                         group: 'time'
                         on_press: root.updateGraph()
                         size_hint: (0.2, 1)
                     ToggleButton
-                        id: toggle_time_monat
+                        id: toggle_time_month
                         text: 'Monat'
                         group: 'time'
                         on_press: root.updateGraph()
                         size_hint: (0.2, 1)
                     ToggleButton
-                        id: toggle_time_jahr
+                        id: toggle_time_year
                         text: 'Jahr'
                         group: 'time'
                         on_press: root.updateGraph()
@@ -101,7 +101,7 @@
                         orientation: 'vertical'
                         pos_hint:{'center_x': 0.5, 'center_y': 0.33}
                         size_hint: (1, 0.33)
-                        padding: (self.width *  0.05,self.width *  0.05, self.width * 0.05,self.width *  0.05)
+                        padding: (0,0,0,0)#self.width *  0.05,self.width *  0.05, self.width * 0.05,self.width *  0.05
                         spacing: self.width * 0.05
                     BoxLayout
                         id: legendenBox2
@@ -114,7 +114,7 @@
                         orientation: 'vertical'
                         pos_hint:{'center_x': 0.5, 'center_y': 0.33}
                         size_hint: (1, 0.33)
-                        padding: (self.width *  0.05,self.width *  0.05, self.width * 0.05,self.width *  0.05)
+                        padding: (0,0,0,0)
                         spacing: self.width * 0.05
                     BoxLayout
                         id: legendenBox3
@@ -127,7 +127,7 @@
                         orientation: 'vertical'
                         pos_hint:{'center_x': 0.5, 'center_y': 0.33}
                         size_hint: (1, 0.33)
-                        padding: (self.width *  0.05,self.width *  0.05, self.width * 0.05,self.width *  0.05)
+                        padding: (0,0,0,0)
                         spacing: self.width * 0.05
 
 
@@ -202,10 +202,10 @@
                 #         id: progress_update
             Button
                 x: 100
-                pos_hint: {'center_x':0.9,'center_y':0.9}
-                size_hint: (0.1, 0.1)
+                text: 'Close'
+                pos_hint: {'center_x':0.85,'center_y':0.9}
+                size_hint: (0.2,0.1)
                 on_release: root.closePopup(1)
-                background_normal: 'close.ico'
 
                         
         FloatLayout
@@ -272,13 +272,14 @@
                     
             Button
                 x: 100
-                pos_hint: {'center_x':0.9,'center_y':0.9}
-                size_hint: (0.1, 0.1)
-                on_release: root.closePopup(3)
-                background_normal: 'close.ico'
+                text: 'Back'
+                pos_hint: {'center_x':0.15,'center_y':0.9}
+                size_hint: (0.2,0.1)
+                on_release: root.openPopup(1)
             Button
                 x: 100
-                pos_hint: {'center_x':0.1,'center_y':0.9}
-                size_hint: (0.1, 0.1)
-                on_release: root.openPopup(1)
-                background_normal: 'back.ico'
+                text: 'Close'
+                pos_hint: {'center_x':0.85,'center_y':0.9}
+                size_hint: (0.2,0.1)
+                on_release: root.closePopup(2)
+
