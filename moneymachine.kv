@@ -61,6 +61,7 @@
                     Button
                         text: 'Update'
                         size_hint: (0.2, 1)
+                        on_release: root.updateButton()
             # Bottom Box
             BoxLayout
                 size_hint: (1, 0.9)
@@ -188,10 +189,11 @@
                     Button
                         # size_hint: (0.5, 0.5)
                         text:'Go'
+                        on_release: root.updateAll()
                     Button
                         # size_hint: (0.5, 0.5)
                         text:'Auswahl'
-                        on_release: root.openPopup(3)
+                        on_release: root.openPopup(2)
                 # BoxLayout
                 #     size_hint: (1, 0.2)
                 #     padding: (self.height * 0.2,self.height *  0.3, self.height * 0.2,self.height *  0.3)
@@ -203,93 +205,11 @@
                 pos_hint: {'center_x':0.9,'center_y':0.9}
                 size_hint: (0.1, 0.1)
                 on_release: root.closePopup(1)
+                background_normal: 'close.ico'
 
-        # FloatLayout
-        #     id: popup_two
-        #     pos_hint: {'center_x':0.5,'center_y':0.5}
-        #     size_hint: (None, 0.5)
-        #     size: self.height, self.height
-        #     BoxLayout
-        #         size_hint: (1,1)
-        #         pos: self.parent.pos
-        #         orientation: 'vertical'
-        #         canvas:
-        #             Color:
-        #                 rgba: 1, 1, 1, 1
-        #             Rectangle:
-        #                 pos: self.pos
-        #                 size: self.size
-        #         padding: (self.height * 0,self.height *  0.2, self.height * 0,self.height *  0)
-        #         BoxLayout
-        #             size_hint: (1, 1)
-        #             canvas:
-        #                 Color:
-        #                     rgba: 1, 0, 1, 0
-        #                 Rectangle:
-        #                     pos: self.pos
-        #                     size: self.size
-        #             orientation: 'horizontal'
-        #             padding: (self.height * 0.3,self.height *  0.3, self.height * 0.3,self.height *  0.3)
-        #             spacing: self.height * 0.3
-        #             Button
-        #                 size_hint: (self.height * 0.5, self.height * 0.5)
-        #                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-        #                 text:'A'
-        #             Button
-        #                 size_hint: (0.7, 1)
-        #                 text:'Auswahl 1'
-        #                 on_release: root.openPopup(3)
-        #         BoxLayout
-        #             size_hint: (1, 1)
-        #             canvas:
-        #                 Color:
-        #                     rgba: 1, 0, 1, 0
-        #                 Rectangle:
-        #                     pos: self.pos
-        #                     size: self.size
-        #             orientation: 'horizontal'
-        #             padding: (self.height * 0.3,self.height *  0.3, self.height * 0.3,self.height *  0.3)
-        #             spacing: self.height * 0.3
-        #             Button
-        #                 size_hint: (self.height * 0.5, self.height * 0.5)
-        #                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-        #                 text:'A'
-        #             Button
-        #                 size_hint: (0.7, 1)
-        #                 text:'Auswahl 2'
-        #                 on_release: root.openPopup(3)
-        #         BoxLayout
-        #             size_hint: (1, 1)
-        #             canvas:
-        #                 Color:
-        #                     rgba: 1, 0, 1, 0
-        #                 Rectangle:
-        #                     pos: self.pos
-        #                     size: self.size
-        #             orientation: 'horizontal'
-        #             padding: (self.height * 0.3,self.height *  0.3, self.height * 0.3,self.height *  0.3)
-        #             spacing: self.height * 0.3
-        #             Button
-        #                 size_hint: (self.height * 0.5, self.height * 0.5)
-        #                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-        #                 text:'A'
-        #             Button
-        #                 size_hint: (0.7, 1)
-        #                 text:'Auswahl 3'
-        #                 on_release: root.openPopup(3)
-        #     Button
-        #         x: 100
-        #         pos_hint: {'center_x':0.9,'center_y':0.9}
-        #         size_hint: (0.1, 0.1)
-        #         on_release: root.closePopup(2)
-        #     Button
-        #         x: 100
-        #         pos_hint: {'center_x':0.1,'center_y':0.9}
-        #         size_hint: (0.1, 0.1)
-        #         on_release: root.openPopup(1)
                         
         FloatLayout
-            id: popup_three
+            id: popup_two
             pos_hint: {'center_x':0.5,'center_y':0.5}
             size_hint: (None, 0.5)
             size: self.height, self.height
@@ -355,29 +275,10 @@
                 pos_hint: {'center_x':0.9,'center_y':0.9}
                 size_hint: (0.1, 0.1)
                 on_release: root.closePopup(3)
+                background_normal: 'close.ico'
             Button
                 x: 100
                 pos_hint: {'center_x':0.1,'center_y':0.9}
                 size_hint: (0.1, 0.1)
                 on_release: root.openPopup(1)
-
-
-# <LegendenLabel>
-#     Label
-#         canvas:
-#             Color:
-#                 rgba: 1, 1, 1, 1
-#             Rectangle:
-#                 pos: self.pos
-#                 size: self.size
-# <LegendenBox>
-#     BoxLayout
-#         canvas:
-#             Color:
-#                 rgba: 0, 1, 0, 1
-#             Rectangle:
-#                 pos: self.pos
-#                 size: self.size
-#         orientation:'vertical'
-#         size_hint: (0.33,1)
-#         pos_hint: {'x':0.5, 'y':0.5}
+                background_normal: 'back.ico'

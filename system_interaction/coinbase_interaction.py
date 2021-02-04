@@ -67,7 +67,7 @@ class CoinbaseInteraction():
         else:
 
             #if values are available in the database set start date to last present date in database
-            day = datetime.fromtimestamp(lastPresentVersion)
+            day = datetime.fromtimestamp(int(lastPresentVersion))
             day = datetime.strftime(day, "%Y-%m-%dT%H:%M:%S")
             day = re.sub("\\d\\d:\\d\\d:\\d\\d", "00:00:00", day)
             dayDate = datetime.strptime(day, "%Y-%m-%dT%H:%M:%S")

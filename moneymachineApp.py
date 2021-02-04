@@ -11,6 +11,7 @@ from kivy.uix.button import Button
 from kivy.uix.dropdown import DropDown
 from kivy.core.window import Window
 
+import time
 import system_interaction.database_interaction as dbi
 import mathematics.calculations as calculations
 
@@ -24,7 +25,6 @@ Window.minimum_height = 540
 colors = ['#1C86EE', '#00CD00', '#CD2626']
 color =  ['1C86EE', '00CD00', 'CD2626']
 
-
 class mainFrame(FloatLayout):
 
     def __init__ (self, **kwargs):
@@ -36,21 +36,15 @@ class mainFrame(FloatLayout):
         self.coin3_read = False
 
         self.closePopup(1)
-        # self.closePopup(2)
-        self.closePopup(3)
+        self.closePopup(2)
         
-        # self.openPopup(1)
-        # self.openPopup(2)
-        self.openPopup(3)
+        self.openPopup(1)
         self.updateGraph()
         self.ti_blocker = True
         db = dbi.DatabaseInteraction()
         self.conf = db.getSavedCoins()
         self.conf.insert(0, '')
         print(self.conf)
-        
-
-
 
     def autocomplete(self, num):
         #print("Complete %d %s" % (num, self.ti_blocker))
@@ -387,13 +381,10 @@ class mainFrame(FloatLayout):
 
 
     def closePopup(self, num):
-        #print('close')
         if num == 1:
             p = self.ids.popup_one
-        # if num == 2:
-            # p = self.ids.popup_two
-        if num == 3:
-            p = self.ids.popup_three
+        if num == 2:
+            p = self.ids.popup_two
             self.updateGraph()
 
         p.size_hint= (None, None)
@@ -405,13 +396,9 @@ class mainFrame(FloatLayout):
         #print('open')
         if num == 1:
             p = self.ids.popup_one
-            self.closePopup(3)
+            self.closePopup(2)
         if num == 2:
             p = self.ids.popup_two
-            self.closePopup(1)
-            self.closePopup(3)
-        if num == 3:
-            p = self.ids.popup_three
             self.closePopup(1)
         
         p.pos_hint= {'center_x':0.5,'center_y':0.5}
@@ -420,6 +407,18 @@ class mainFrame(FloatLayout):
         for child in p.children:
             child.opacity = 1
 
+
+    def updateButton(self):
+        db = dbi.DatabaseInteraction()
+        if self.ids.coin1.text != '' and self.ids.coin1.text in self.conf: db.updateCoin(self.ids.coin1.text)
+        if self.ids.coin2.text != '' and self.ids.coin2.text in self.conf: db.updateCoin(self.ids.coin2.text)
+        if self.ids.coin3.text != '' and self.ids.coin3.text in self.conf: db.updateCoin(self.ids.coin3.text)
+        self.getData()
+        self.updateGraph()
+
+    def updateAll(self):
+        db = dbi.DatabaseInteraction()
+        db.updateAllCoins()
 
 class mainApp(App):
     def build(self):

@@ -83,25 +83,25 @@ def __createNewCoins__(db, databaseInteraction):
     return -> list of new coins
     '''
 
-        #gets the coins that alread exist
-        existingCoins= databaseInteraction.getSavedCoins()
-        #gets the defined coins
-        definedCoins = __getDefindedCoins__()
-        newCoins = []
+    #gets the coins that alread exist
+    existingCoins= databaseInteraction.getSavedCoins()
+    #gets the defined coins
+    definedCoins = __getDefindedCoins__()
+    newCoins = []
 
-        for definedCoin in definedCoins:
-            if not definedCoin in existingCoins:
-                
-                #only create or truncate table if coin is not in use
-                newCoins.append(definedCoin)
-                #writes new version of the coin to 0
-                databaseInteraction.__writeCoinVersion__(definedCoin, "0")
-                db_curser = db.cursor()
-                db_curser.execute("CREATE TABLE IF NOT EXISTS {}(id INT AUTO_INCREMENT PRIMARY KEY, date VARCHAR(20), low VARCHAR(20), high VARCHAR(20), open VARCHAR(20), close VARCHAR(20), volume VARCHAR(20));".format(definedCoin))
-                db_curser.execute("TRUNCATE TABLE {};".format(definedCoin))
+    for definedCoin in definedCoins:
+        if not definedCoin in existingCoins:
             
-        db.commit()
-        return newCoins
+            #only create or truncate table if coin is not in use
+            newCoins.append(definedCoin)
+            #writes new version of the coin to 0
+            databaseInteraction.__writeCoinVersion__(definedCoin, "0")
+            db_curser = db.cursor()
+            db_curser.execute("CREATE TABLE IF NOT EXISTS {}(id INT AUTO_INCREMENT PRIMARY KEY, date VARCHAR(20), low VARCHAR(20), high VARCHAR(20), open VARCHAR(20), close VARCHAR(20), volume VARCHAR(20));".format(definedCoin))
+            db_curser.execute("TRUNCATE TABLE {};".format(definedCoin))
+        
+    db.commit()
+    return newCoins
 
 def __updateNewCoins__(create, db, databaseInteraction):
     '''
