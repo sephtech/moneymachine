@@ -5,11 +5,14 @@ from kivy.app import App
 
 from kivy.garden.matplotlib.backend_kivyagg import FigureCanvasKivyAgg
 from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.dropdown import DropDown
 from kivy.core.window import Window
 
-from activate_coins import __getDefindedCoins__
+import time
+import system_interaction.database_interaction as dbi
 import mathematics.calculations as calculations
 
 
@@ -18,8 +21,9 @@ import mathematics.calculations as calculations
 Window.minimum_width = 960
 Window.minimum_height = 540
 # conf = ['', 'btc', 'eth', 'ltc', 'bat', 'link', 'xlm', 'bch', 'dash']
-colors = ['green', 'red', 'orange']
-
+#        [Blau,       Grün       Rot]
+colors = ['#1C86EE', '#00CD00', '#CD2626']
+color =  ['1C86EE', '00CD00', 'CD2626']
 
 class mainFrame(FloatLayout):
 
@@ -33,19 +37,14 @@ class mainFrame(FloatLayout):
 
         self.closePopup(1)
         self.closePopup(2)
-        self.closePopup(3)
         
-        # self.openPopup(1)
-        # self.openPopup(2)
-        self.openPopup(3)
+        self.openPopup(1)
         self.updateGraph()
         self.ti_blocker = True
-        self.conf = __getDefindedCoins__()
+        db = dbi.DatabaseInteraction()
+        self.conf = db.getSavedCoins()
         self.conf.insert(0, '')
         print(self.conf)
-        
-
-
 
     def autocomplete(self, num):
         #print("Complete %d %s" % (num, self.ti_blocker))
@@ -138,6 +137,10 @@ class mainFrame(FloatLayout):
             self.rel_coin1_month = calc.calculateRelativeChanges(self.data_coin1_month)
             self.data_coin1_year=data_coin1[7]
             self.rel_coin1_year = calc.calculateRelativeChanges(self.data_coin1_year)
+            self.pred_coin1_day = calc.predictValue(self.ids.coin1.text, 60, 72)
+            self.pred_coin1_week = calc.predictValue(self.ids.coin1.text, 60, 288)
+            # self.pred_coin1_day = 10000
+            # self.pred_coin1_week = 20000
             self.coin1_read = True
             self.counter_coins += 1
         else:
@@ -157,6 +160,10 @@ class mainFrame(FloatLayout):
             self.rel_coin2_month = calc.calculateRelativeChanges(self.data_coin2_month)
             self.data_coin2_year=data_coin2[7]
             self.rel_coin2_year = calc.calculateRelativeChanges(self.data_coin2_year)
+            self.pred_coin2_day = calc.predictValue(self.ids.coin2.text, 60, 72)
+            self.pred_coin2_week = calc.predictValue(self.ids.coin2.text, 60, 288)
+            # self.pred_coin2_day = 10000
+            # self.pred_coin2_week = 20000
             self.coin2_read = True
             self.counter_coins += 1
         else:
@@ -176,6 +183,10 @@ class mainFrame(FloatLayout):
             self.rel_coin3_month = calc.calculateRelativeChanges(self.data_coin3_month)
             self.data_coin3_year=data_coin3[7]
             self.rel_coin3_year = calc.calculateRelativeChanges(self.data_coin3_year)
+            self.pred_coin3_day = calc.predictValue(self.ids.coin3.text, 60, 72)
+            self.pred_coin3_week = calc.predictValue(self.ids.coin3.text, 60, 288)
+            # self.pred_coin3_day = 10000
+            # self.pred_coin3_week = 20000
             self.coin3_read = True
             self.counter_coins += 1
         else:
@@ -183,6 +194,11 @@ class mainFrame(FloatLayout):
 
     def updateGraph(self):
         graphGrid = self.ids.graphGrid
+        coinValues = [0,0,0]
+        coinRels = [0,0,0]
+        coinMins = [0,0,0]
+        coinMaxs = [0,0,0]
+        predValues = [0,0,0]
         timeframe =''
         time_graph = []
         if(self.ids.toggle_time_tag.state == 'down'):
@@ -192,14 +208,29 @@ class mainFrame(FloatLayout):
                 if self.counter_coins > 1: data_graph.append(self.rel_coin1_day)
                 else: data_graph.append(self.data_coin1_day)
                 time_graph.append(self.time_coin1_day)
+                coinValues[0] = self.data_coin1_day[-1]
+                coinRels[0] = self.rel_coin1_day[-1]
+                coinMins[0] = min(self.data_coin1_day)
+                coinMaxs[0] = max(self.data_coin1_day)
+                predValues[0] = self.pred_coin1_day
             if self.coin2_read:
                 if self.counter_coins > 1: data_graph.append(self.rel_coin2_day)
                 else: data_graph.append(self.data_coin2_day)
                 time_graph.append(self.time_coin2_day)
+                coinValues[1] = self.data_coin2_day[-1]
+                coinRels[1] = self.rel_coin2_day[-1]
+                coinMins[1] = min(self.data_coin2_day)
+                coinMaxs[1] = max(self.data_coin2_day)
+                predValues[1] = self.pred_coin2_day
             if self.coin3_read:
                 if self.counter_coins > 1: data_graph.append(self.rel_coin3_day)
                 else: data_graph.append(self.data_coin3_day)
                 time_graph.append(self.time_coin3_day)
+                coinValues[2] = self.data_coin3_day[-1]
+                coinRels[2] = self.rel_coin3_day[-1]
+                coinMins[2] = min(self.data_coin3_day)
+                coinMaxs[2] = max(self.data_coin3_day)
+                predValues[2] = self.pred_coin3_day
         elif(self.ids.toggle_time_woche.state == 'down'):
             timeframe = 'Woche'
             data_graph = []
@@ -207,14 +238,29 @@ class mainFrame(FloatLayout):
                 if self.counter_coins > 1: data_graph.append(self.rel_coin1_week)
                 else: data_graph.append(self.data_coin1_week)
                 time_graph.append(self.time_coin1_week)
+                coinValues[0] = self.data_coin1_day[-1]
+                coinRels[0] = self.rel_coin1_day[-1]
+                coinMins[0] = min(self.data_coin1_day)
+                coinMaxs[0] = max(self.data_coin1_day)
+                predValues[0] = self.pred_coin1_week
             if self.coin2_read:
                 if self.counter_coins > 1: data_graph.append(self.rel_coin2_week)
                 else: data_graph.append(self.data_coin2_week)
                 time_graph.append(self.time_coin2_week)
+                coinValues[1] = self.data_coin2_day[-1]
+                coinRels[1] = self.rel_coin2_day[-1]
+                coinMins[1] = min(self.data_coin2_day)
+                coinMaxs[1] = max(self.data_coin2_day)
+                predValues[1] = self.pred_coin2_week
             if self.coin3_read:
                 if self.counter_coins > 1: data_graph.append(self.rel_coin3_week)
                 else: data_graph.append(self.data_coin3_week)
                 time_graph.append(self.time_coin3_week)
+                coinValues[2] = self.data_coin3_day[-1]
+                coinRels[2] = self.rel_coin3_day[-1]
+                coinMins[2] = min(self.data_coin3_day)
+                coinMaxs[2] = max(self.data_coin3_day)
+                predValues[2] = self.pred_coin3_week
         elif(self.ids.toggle_time_monat.state == 'down'):
             timeframe = 'Monat'
             data_graph = []
@@ -222,14 +268,29 @@ class mainFrame(FloatLayout):
                 if self.counter_coins > 1: data_graph.append(self.rel_coin1_month)
                 else: data_graph.append(self.data_coin1_month)
                 time_graph.append(self.time_coin1_month)
+                coinValues[0] = self.data_coin1_day[-1]
+                coinRels[0] = self.rel_coin1_day[-1]
+                coinMins[0] = min(self.data_coin1_day)
+                coinMaxs[0] = max(self.data_coin1_day)
+                predValues[0] = self.pred_coin1_week
             if self.coin2_read:
                 if self.counter_coins > 1: data_graph.append(self.rel_coin2_month)
                 else: data_graph.append(self.data_coin2_month)
                 time_graph.append(self.time_coin2_month)
+                coinValues[1] = self.data_coin2_day[-1]
+                coinRels[1] = self.rel_coin2_day[-1]
+                coinMins[1] = min(self.data_coin2_day)
+                coinMaxs[1] = max(self.data_coin2_day)
+                predValues[1] = self.pred_coin2_week
             if self.coin3_read:
                 if self.counter_coins > 1: data_graph.append(self.rel_coin3_month)
                 else: data_graph.append(self.data_coin3_month)
                 time_graph.append(self.time_coin3_month)
+                coinValues[2] = self.data_coin3_day[-1]
+                coinRels[2] = self.rel_coin3_day[-1]
+                coinMins[2] = min(self.data_coin3_day)
+                coinMaxs[2] = max(self.data_coin3_day)
+                predValues[2] = self.pred_coin3_week
         elif(self.ids.toggle_time_jahr.state == 'down'):
             timeframe = 'Jahr'
             data_graph = []
@@ -237,22 +298,38 @@ class mainFrame(FloatLayout):
                 if self.counter_coins > 1: data_graph.append(self.rel_coin1_year)
                 else: data_graph.append(self.data_coin1_year)
                 time_graph.append(self.time_coin1_year)
+                coinValues[0] = self.data_coin1_day[-1]
+                coinRels[0] = self.rel_coin1_day[-1]
+                coinMins[0] = min(self.data_coin1_day)
+                coinMaxs[0] = max(self.data_coin1_day)
+                predValues[0] = self.pred_coin1_week
             if self.coin2_read:
                 if self.counter_coins > 1: data_graph.append(self.rel_coin2_year)
                 else: data_graph.append(self.data_coin2_year)
                 time_graph.append(self.time_coin2_year)
+                coinValues[1] = self.data_coin2_day[-1]
+                coinRels[1] = self.rel_coin2_day[-1]
+                coinMins[1] = min(self.data_coin2_day)
+                coinMaxs[1] = max(self.data_coin2_day)
+                predValues[1] = self.pred_coin2_week
             if self.coin3_read:
                 if self.counter_coins > 1: data_graph.append(self.rel_coin3_year)
                 else: data_graph.append(self.data_coin3_year)
                 time_graph.append(self.time_coin3_year)
+                coinValues[2] = self.data_coin3_day[-1]
+                coinRels[2] = self.rel_coin3_day[-1]
+                coinMins[2] = min(self.data_coin3_day)
+                coinMaxs[2] = max(self.data_coin3_day)
+                predValues[2] = self.pred_coin3_week
         else:
             self.ids.toggle_time_tag.state = 'down'
             return
         plt.clf()
         plt.plot()
         plt.grid()
-        plt.figure().patch.set_facecolor('grey')
-        plt.axes().set_facecolor('grey')
+        plt.figure().patch.set_facecolor('#F7F7F7')
+        plt.axes().set_facecolor('#F7F7F7')
+        runner = 0
         for c in range(0,3):
             # create data
             if (c == 0 and self.coin1_read) or (c == 1 and self.coin2_read) or (c == 2 and self.coin3_read):
@@ -260,7 +337,38 @@ class mainFrame(FloatLayout):
                 
                 # use the plot function
                 plt.plot(time_graph[c], data_graph[c], color=colors[c])
+                ti1 = self.ids.coin1.text
+                ti2 = self.ids.coin2.text
+                ti3 = self.ids.coin3.text
+                coinName = (ti1 if c == 0 else (ti2 if c == 1 else (ti3 if c == 2 else '')))
+                coinValue = coinValues[c]
+                coinRel = coinRels[c]
+                coinMin = coinMins[c]
+                coinMax = coinMaxs[c]
+                predValue = predValues[c]
+                predRel = (predValue - coinValue) / coinValue * 100
+                preTime = '6h' if timeframe == 'Tag' else '1d'
+                infobox = (self.ids.legendenBox1 if runner == 0 else (self.ids.legendenBox2 if runner == 1 else (self.ids.legendenBox3 if runner == 2 else None)))
+                
+                relsignData = ''
+                relsignPred = ''
 
+                if coinRel > 0: relsignData = '+'
+                if predRel > 0: relsignPred = '+'
+                
+                s = '[b][size=18][color=%s]%s:\n[/color][/size][/b]'%(color[c],coinName.upper())
+                s += '[b][color=000000]Value:[/b] %.2f$ %s%.2f%%\n'%(coinValue, relsignData, coinRel)
+                s += '[b]Min:[/b] %.2f$\n'%(coinMin)
+                s += '[b]Max:[/b] %.2f$\n'%(coinMax)
+                s += '[b]Prediction for %s[/b]:\n%.2f$ %s%.2f%%[/color]'%(preTime, predValue, relsignPred, predRel)
+                print(s)
+
+                infobox.clear_widgets()
+                infobox.add_widget(Label(text=(s),
+                                         size_hint = (1, 1), markup=True))
+
+                runner += 1
+            
 
 
         graphGrid.clear_widgets()
@@ -271,14 +379,12 @@ class mainFrame(FloatLayout):
 
         print('Finished')
 
+
     def closePopup(self, num):
-        #print('close')
         if num == 1:
             p = self.ids.popup_one
         if num == 2:
             p = self.ids.popup_two
-        if num == 3:
-            p = self.ids.popup_three
             self.updateGraph()
 
         p.size_hint= (None, None)
@@ -294,20 +400,25 @@ class mainFrame(FloatLayout):
         if num == 2:
             p = self.ids.popup_two
             self.closePopup(1)
-            self.closePopup(3)
-        if num == 3:
-            p = self.ids.popup_three
-            self.closePopup(2)
         
         p.pos_hint= {'center_x':0.5,'center_y':0.5}
         p.size_hint= (None, 0.5)
         p.size= (self.height, self.height)
         for child in p.children:
             child.opacity = 1
-        
-            
 
-        
+
+    def updateButton(self):
+        db = dbi.DatabaseInteraction()
+        if self.ids.coin1.text != '' and self.ids.coin1.text in self.conf: db.updateCoin(self.ids.coin1.text)
+        if self.ids.coin2.text != '' and self.ids.coin2.text in self.conf: db.updateCoin(self.ids.coin2.text)
+        if self.ids.coin3.text != '' and self.ids.coin3.text in self.conf: db.updateCoin(self.ids.coin3.text)
+        self.getData()
+        self.updateGraph()
+
+    def updateAll(self):
+        db = dbi.DatabaseInteraction()
+        db.updateAllCoins()
 
 class mainApp(App):
     def build(self):
