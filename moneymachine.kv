@@ -250,7 +250,7 @@
                     multiline: False
                     hint_text: 'Coin 1'
                     on_text: root.autocomplete(1)
-                    on_focus: root.coinConfirm(1)
+                    on_focus: root.tiFocusChange(1)
                     write_tab: False
                 TextInput
                     id: coin2
@@ -260,7 +260,7 @@
                     multiline: False
                     hint_text: 'Coin 2'
                     on_text: root.autocomplete(2)
-                    on_focus: root.coinConfirm(2)
+                    on_focus: root.tiFocusChange(2)
                     write_tab: False
                 TextInput
                     id: coin3
@@ -270,7 +270,7 @@
                     multiline: False
                     hint_text: 'Coin 3'
                     on_text: root.autocomplete(3)
-                    on_focus: root.coinConfirm(3)
+                    on_focus: root.tiFocusChange(3)
                     write_tab: False
                 Button                    
                     pos_hint: {'center_x': 0.5, 'center_y': 0.8}
